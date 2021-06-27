@@ -1,5 +1,6 @@
 # See it in action https://monitor.bright-waters.com/
 
+Note this app requires a lot of custom configuration so it will take a lot of work to use it youself.
 
 
 # AngularMonitor
