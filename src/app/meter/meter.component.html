@@ -1,0 +1,18 @@
+<div class="chartContainer"
+  [ngStyle]="{'display': disp}">
+  <canvas baseChart id="meter"
+    [height]=1000
+    [width]=2000
+    [ngStyle]="{'height': dynamicHeight + 'px', 'width': dynamicWidth + 'px'}"
+    [data]="doughnutChartData"
+    [chartType]="doughnutChartType"
+    [colors]="doughnutChartColors"
+    [options]="chartOptions">
+  </canvas>
+  <label id="meterLabel1" [ngStyle]="{'top': labelHeight + 'px', 'font-size': '1.9vw'}">
+    {{label}}<br>{{data}}
+  </label>
+  <label id="meterLabel2" [ngStyle]="{'top': label2Height + 'px', 'left': label2Width + 'px', 'font-size': '1.0vw'}">
+    {{max}}<br>{{unit}}
+  </label>
+</div>

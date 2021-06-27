@@ -1,0 +1,13 @@
+<div class="chart-wrapper" style="display: block;">
+  <canvas baseChart
+    [height]=height
+    [width]=width
+    [ngStyle]="{'height': dynamicHeight + 'px', 'width': dynamicWidth + 'px'}"
+    chartType="line"
+    [datasets]="chartData"
+    [labels]="chartLabels"
+    [options]="chartOptions"
+    [legend]="chartLegend"
+    [plugins]="chartPlugins">
+  </canvas>
+</div>
