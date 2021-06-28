@@ -27,6 +27,7 @@
     "chartjs-plugin-datalabels": "^0.7.0",
     "chartjs-plugin-doughnutlabel": "^2.0.3",
     "html-table-to-json": "^1.0.0",
+    "moment": "^2.29.1",
     "ng2-charts": "^2.4.2",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",

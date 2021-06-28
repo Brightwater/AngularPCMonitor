@@ -45,9 +45,35 @@ div {
 .multi {
   width: 100%;
   height: 100%;
+  text-align: center;
 }
 
-.multilabel {
+.multilabelA {
+  color: white;
+  margin: 0 !important;
+  padding: 0 !important;
+  padding-top: 5% !important;
+  padding-bottom: 7% !important;
+  position: relative !important;
+  font-size: 1.5vw;
+  margin-left: 2% !important;
+  width: 100%;
+  height: 20% !important;
+}
+
+.multilabelB {
+  color: white;
+  margin: 0 !important;
+  padding: 0 !important;
+  padding-bottom: 7% !important;
+  position: relative !important;
+  font-size: 1.5vw;
+  margin-left: 2% !important;
+  width: 100%;
+  height: 20% !important;
+}
+
+.multilabelC {
   color: white;
   margin: 0 !important;
   padding: 0 !important;
@@ -55,7 +81,7 @@ div {
   font-size: 1.5vw;
   margin-left: 2% !important;
   width: 100%;
-  text-align: left !important;
+  height: 20% !important;
 }
 
 .value {
@@ -72,6 +98,10 @@ div {
   top: 55% !important;
   width: 100%;
   text-align: center;
+}
+
+.innercolor {
+  color: lightseagreen;
 }
 
 .smallvalue {

@@ -24,7 +24,8 @@ export class GraphComponent implements OnInit {
     { data: Array<any>(), label: 'Cpu Load', },
     { data: Array<any>(), label: 'Cpu Temp' },
     { data: Array<any>(), label: 'Gpu Load', borderColor: "green" },
-    { data: Array<any>(), label: 'Gpu Temp', borderColor: "orange"}
+    { data: Array<any>(), label: 'Gpu Temp', borderColor: "orange"},
+    { data: Array<any>(), label: 'Max Core load', borderColor: "purple"}
   ];
 
   chartLabels: Label[] = [];

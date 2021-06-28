@@ -1,5 +1,6 @@
 import { APP_BOOTSTRAP_LISTENER, Component, OnInit, ChangeDetectorRef  } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import * as moment from 'moment';
 
 
 @Component({
@@ -263,10 +264,7 @@ export class AppComponent implements OnInit {
   //cpuFrequencies: number[] = [];
   cpuFrequencyIndexes: number[] = [];
 
-
-
-
-
+  timeStamp!: moment.Moment;
 
   cpuTemp: any;
 
@@ -326,10 +324,18 @@ export class AppComponent implements OnInit {
     //alert(Object.keys({"success":"You are welcome"})[0]);
     console.log(this.objects);
     setInterval( () => {
+      //let timeNow: moment.Moment = moment().format('DD-MMM-YYYY HH:mm:ss');
+      let timeNow: moment.Moment = moment();
+      if (timeNow.diff(this.timeStamp, 'minutes') > 1) {
+        firstCall = true;
+        console.log("Reset app time")
+        this.timeStamp = moment();
+      }
+
       this.http.get(url2).subscribe((res) => {
         this.data2 = res;
         let data = JSON.parse(JSON.stringify(this.data2));
-        console.log(data);
+        //console.log(data);
 
         this.serverCpuLoad = data['cpuLoad'] + ' %'
         this.serverCpuTemp = data['cpuTemp'] + ' ℃'
@@ -341,6 +347,7 @@ export class AppComponent implements OnInit {
       // MAYBE TRY BLCOK??? to check if time out aka lost connection
       this.http.get(url3).subscribe((res) => {
         this.data = res;
+        this.timeStamp = moment();
         if (firstCall) {
           for (let i = 0; i < this.data.length; i++) {
             let currStr = this.data[i]['SensorName'];
@@ -362,7 +369,7 @@ export class AppComponent implements OnInit {
                 this.objects.cpuPowerO.index = i;
                 break;
               }
-              case 'SoC Voltage (SVI2 TFN)': {
+              case 'CPU Core Voltage (SVI2 TFN)': {
                 this.objects.cpuVoltageO.index = i;
                 break;
               }
@@ -450,8 +457,13 @@ export class AppComponent implements OnInit {
                 this.objects.hotSpotTempO.index = i;
                 break;
               }
+              case 'Max CPU/Thread Usage': {
+                this.objects.maxCoreLoadO.index = i;
+                break;
+              }
               default: {
-                if (currStr.includes('clock (perf', 0)) {
+
+                if (currStr.includes('Effective Clock')) {
                   this.cpuFrequencyIndexes.push(i);
                 }
                 break;
@@ -626,12 +638,19 @@ export class AppComponent implements OnInit {
         }
 
         this.objects.sn850TempO.value = data[this.objects.sn850TempO.index]['SensorValue']
-        this.objects.evo840TempO.value = data[this.objects.evo840TempO.index]['SensorValue']
         if (this.objects.sn850TempO.value > this.objects.sn850TempO.max) {
           this.objects.sn850TempO.max = this.objects.sn850TempO.value;
         }
         if (this.objects.sn850TempO.value < this.objects.sn850TempO.min) {
           this.objects.sn850TempO.min = this.objects.sn850TempO.value;
+        }
+
+        this.objects.evo840TempO.value = data[this.objects.evo840TempO.index]['SensorValue']
+        if (this.objects.evo840TempO.value > this.objects.evo840TempO.max) {
+          this.objects.evo840TempO.max = this.objects.evo840TempO.value;
+        }
+        if (this.objects.evo840TempO.value < this.objects.evo840TempO.min) {
+          this.objects.evo840TempO.min = this.objects.evo840TempO.value;
         }
 
         this.objects.ramTempO.value = data[this.objects.ramTempO.index]['SensorValue']
@@ -693,6 +712,13 @@ export class AppComponent implements OnInit {
           this.objects.vramTempO.min = this.objects.vramTempO.value;
         }
 
+        this.objects.maxCoreLoadO.value = data[this.objects.maxCoreLoadO.index]['SensorValue']
+        if (this.objects.maxCoreLoadO.value > this.objects.vramTempO.max) {
+          this.objects.maxCoreLoadO.max = this.objects.vramTempO.value;
+        }
+        if (this.objects.maxCoreLoadO.value < this.objects.maxCoreLoadO.min) {
+          this.objects.maxCoreLoadO.min = this.objects.maxCoreLoadO.value;
+        }
 
         //this.gpuPower = gpu.Children[4].Children[0].Value //
 
@@ -710,10 +736,10 @@ export class AppComponent implements OnInit {
 
 
         // tslint:disable-next-line: max-line-length
-        this.chartData = [this.objects.cpuLoadO.value, this.objects.cpuTempCCD1O.value, this.objects.gpuLoadO.value, this.objects.gpuTempO.value];
+        this.chartData = [this.objects.cpuLoadO.value, this.objects.cpuTempCCD1O.value, this.objects.gpuLoadO.value, this.objects.gpuTempO.value, this.objects.maxCoreLoadO.value];
         //this.chartData1 = [this.cpuLoad];
         this.ref.markForCheck();
-        console.log(this.objects);
+        //console.log(this.objects);
       });
     }, 1000);
 
