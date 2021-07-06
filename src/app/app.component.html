@@ -6,12 +6,12 @@
       [rowspan] = "10">
       <div class="infoContainer">
         <h1 class="label">Cpu Load</h1>
-        <h1 class="value">{{objects.cpuLoadO.value | number:'1.1-1' }} {{objects.cpuLoadO.unit}}</h1>
+        <h1 class="value">{{sensors.cpuLoadO.value | number:'1.1-1' }} {{sensors.cpuLoadO.unit}}</h1>
         <h3 class="min">
-          {{objects.cpuLoadO.min | number:'1.1-1' }} {{objects.cpuLoadO.unit}}
+          {{sensors.cpuLoadO.min | number:'1.1-1' }} {{sensors.cpuLoadO.unit}}
         </h3>
         <h3 class="max">
-          {{objects.cpuLoadO.max | number:'1.1-1' }} {{objects.cpuLoadO.unit}}
+          {{sensors.cpuLoadO.max | number:'1.1-1' }} {{sensors.cpuLoadO.unit}}
         </h3>
       </div>
 
@@ -23,13 +23,13 @@
       [rowspan] = "5">
       <div>
         <h1 class="labelsm">CCD1 Temp</h1>
-        <!-- <h1 class="value">{{objects.cpuTempCCD1O.value}}</h1> -->
-        <h1 class="valuesm">{{objects.cpuTempCCD1O.value | number:'1.1-1' }} {{objects.cpuTempCCD1O.unit}}</h1>
+        <!-- <h1 class="value">{{sensors.cpuTempCCD1O.value}}</h1> -->
+        <h1 class="valuesm">{{sensors.cpuTempCCD1O.value | number:'1.1-1' }} {{sensors.cpuTempCCD1O.unit}}</h1>
         <h3 class="minsm">
-          {{objects.cpuTempCCD1O.min | number:'1.1-1' }} {{objects.cpuTempCCD1O.unit}}
+          {{sensors.cpuTempCCD1O.min | number:'1.1-1' }} {{sensors.cpuTempCCD1O.unit}}
         </h3>
         <h3 class="maxsm">
-          {{objects.cpuTempCCD1O.max | number:'1.1-1' }} {{objects.cpuTempCCD1O.unit}}
+          {{sensors.cpuTempCCD1O.max | number:'1.1-1' }} {{sensors.cpuTempCCD1O.unit}}
         </h3>
       </div>
       <!-- <app-meter [data]=cpuTemp [label]="'Cpu Tmp'" [max]=100></app-meter> -->
@@ -41,12 +41,12 @@
       <div>
         <h1 class="labelsm">Cpu Max Freq</h1>
         <!-- <h1 class="value">{{cpuRPM}}</h1> -->
-        <h1 class="valuesm">{{objects.cpuMaxFreqO.value | number:'1.1-1' }} {{objects.cpuMaxFreqO.unit}}</h1>
+        <h1 class="valuesm">{{sensors.cpuMaxFreqO.value | number:'1.1-1' }} {{sensors.cpuMaxFreqO.unit}}</h1>
         <h3 class="minsm">
-          {{objects.cpuMaxFreqO.min | number:'1.1-1' }} {{objects.cpuMaxFreqO.unit}}
+          {{sensors.cpuMaxFreqO.min | number:'1.1-1' }} {{sensors.cpuMaxFreqO.unit}}
         </h3>
         <h3 class="maxsm">
-          {{objects.cpuMaxFreqO.max | number:'1.1-1' }} {{objects.cpuMaxFreqO.unit}}
+          {{sensors.cpuMaxFreqO.max | number:'1.1-1' }} {{sensors.cpuMaxFreqO.unit}}
         </h3>
       </div>
       <!-- <app-meter [data]=cpuRPM [label]="'Cpu Fan'" [max]=3000></app-meter> -->
@@ -58,12 +58,12 @@
       <div>
         <h1 class="label">Cpu Pwr</h1>
         <!-- <h1 class="value">{{cpuPower}}</h1> -->
-        <h1 class="value">{{objects.cpuPowerO.value | number:'1.1-1' }} {{objects.cpuPowerO.unit}}</h1>
+        <h1 class="value">{{sensors.cpuPowerO.value | number:'1.1-1' }} {{sensors.cpuPowerO.unit}}</h1>
         <h3 class="min">
-          {{objects.cpuPowerO.min | number:'1.1-1' }} {{objects.cpuPowerO.unit}}
+          {{sensors.cpuPowerO.min | number:'1.1-1' }} {{sensors.cpuPowerO.unit}}
         </h3>
         <h3 class="max">
-          {{objects.cpuPowerO.max | number:'1.1-1' }} {{objects.cpuPowerO.unit}}
+          {{sensors.cpuPowerO.max | number:'1.1-1' }} {{sensors.cpuPowerO.unit}}
         </h3>
       </div>
       <!-- <app-meter [data]=cpuPower [label]="'Cpu Pwr'" [max]=180></app-meter> -->
@@ -74,12 +74,12 @@
       <div>
         <h1 class="label">Cpu Voltage</h1>
         <!-- <h1 class="value">{{cpuVoltage}}</h1> -->
-        <h1 class="value">{{objects.cpuVoltageO.value | number:'1.3-3' }} {{objects.cpuVoltageO.unit}}</h1>
+        <h1 class="value">{{sensors.cpuVoltageO.value | number:'1.3-3' }} {{sensors.cpuVoltageO.unit}}</h1>
         <h3 class="min">
-          {{objects.cpuVoltageO.min | number:'1.3-3' }} {{objects.cpuVoltageO.unit}}
+          {{sensors.cpuVoltageO.min | number:'1.3-3' }} {{sensors.cpuVoltageO.unit}}
         </h3>
         <h3 class="max">
-          {{objects.cpuVoltageO.max | number:'1.3-3' }} {{objects.cpuVoltageO.unit}}
+          {{sensors.cpuVoltageO.max | number:'1.3-3' }} {{sensors.cpuVoltageO.unit}}
         </h3>
       </div>
       <!-- <app-meter [data]=cpuVoltage [label]="'Cpu Pwr'" [max]=1.6></app-meter> -->
@@ -92,12 +92,12 @@
       <div>
         <h1 class="labelsm">RAM</h1>
         <!-- <h1 class="value">{{ramUsage}}</h1> -->
-        <h1 class="valuesm">{{objects.ramUsageO.value | number:'1.1-1' }} {{objects.ramUsageO.unit}}</h1>
+        <h1 class="valuesm">{{sensors.ramUsageO.value | number:'1.1-1' }} {{sensors.ramUsageO.unit}}</h1>
         <h3 class="minsm">
-          {{objects.ramUsageO.min | number:'1.1-1' }} {{objects.ramUsageO.unit}}
+          {{sensors.ramUsageO.min | number:'1.1-1' }} {{sensors.ramUsageO.unit}}
         </h3>
         <h3 class="maxsm">
-          {{objects.ramUsageO.max | number:'1.1-1' }} {{objects.ramUsageO.unit}}
+          {{sensors.ramUsageO.max | number:'1.1-1' }} {{sensors.ramUsageO.unit}}
         </h3>
       </div>
       <!-- <app-meter [data]=ramUsage [label]="'RAM'" [max]=100></app-meter> -->
@@ -108,13 +108,13 @@
       [rowspan] = "5">
       <div>
         <h1 class="labelsm">CCD2 Temp</h1>
-        <!-- <h1 class="value">{{objects.cpuTempCCD2O.value}}</h1> -->
-        <h1 class="valuesm">{{objects.cpuTempCCD2O.value | number:'1.1-1' }} {{objects.cpuTempCCD2O.unit}}</h1>
+        <!-- <h1 class="value">{{sensors.cpuTempCCD2O.value}}</h1> -->
+        <h1 class="valuesm">{{sensors.cpuTempCCD2O.value | number:'1.1-1' }} {{sensors.cpuTempCCD2O.unit}}</h1>
         <h3 class="minsm">
-          {{objects.cpuTempCCD2O.min | number:'1.1-1' }} {{objects.cpuTempCCD2O.unit}}
+          {{sensors.cpuTempCCD2O.min | number:'1.1-1' }} {{sensors.cpuTempCCD2O.unit}}
         </h3>
         <h3 class="maxsm">
-          {{objects.cpuTempCCD2O.max | number:'1.1-1' }} {{objects.cpuTempCCD2O.unit}}
+          {{sensors.cpuTempCCD2O.max | number:'1.1-1' }} {{sensors.cpuTempCCD2O.unit}}
         </h3>
       </div>
       <!-- <app-meter [data]=cpuTemp [label]="'Cpu Tmp'" [max]=100></app-meter> -->
@@ -128,12 +128,12 @@
       <div>
         <h1 class="labelsm">Core Max Load</h1>
         <!-- <h1 class="value">{{cpuRPM}}</h1> -->
-        <h1 class="valuesm">{{objects.maxCoreLoadO.value | number:'1.1-1' }} {{objects.maxCoreLoadO.unit}}</h1>
+        <h1 class="valuesm">{{sensors.maxCoreLoadO.value | number:'1.1-1' }} {{sensors.maxCoreLoadO.unit}}</h1>
         <h3 class="minsm">
-          {{objects.maxCoreLoadO.min | number:'1.1-1' }} {{objects.maxCoreLoadO.unit}}
+          {{sensors.maxCoreLoadO.min | number:'1.1-1' }} {{sensors.maxCoreLoadO.unit}}
         </h3>
         <h3 class="maxsm">
-          {{objects.maxCoreLoadO.max | number:'1.1-1' }} {{objects.maxCoreLoadO.unit}}
+          {{sensors.maxCoreLoadO.max | number:'1.1-1' }} {{sensors.maxCoreLoadO.unit}}
         </h3>
       </div>
       <!-- <app-meter [data]=cpuRPM [label]="'Cpu Fan'" [max]=3000></app-meter> -->
@@ -144,12 +144,12 @@
       [rowspan] = "5">
       <div>
         <h1 class="labelsm">RAM Temp</h1>
-        <h1 class="valuesm">{{objects.ramTempO.value | number:'1.1-1' }} {{objects.ramTempO.unit}}</h1>
+        <h1 class="valuesm">{{sensors.ramTempO.value | number:'1.1-1' }} {{sensors.ramTempO.unit}}</h1>
         <h3 class="minsm">
-          {{objects.ramTempO.min | number:'1.1-1' }} {{objects.ramTempO.unit}}
+          {{sensors.ramTempO.min | number:'1.1-1' }} {{sensors.ramTempO.unit}}
         </h3>
         <h3 class="maxsm">
-          {{objects.ramTempO.max | number:'1.1-1' }} {{objects.ramTempO.unit}}
+          {{sensors.ramTempO.max | number:'1.1-1' }} {{sensors.ramTempO.unit}}
         </h3>
       </div>
       <!-- <app-meter [data]=ramUsage [label]="'RAM'" [max]=100></app-meter> -->
@@ -169,12 +169,12 @@
       <div>
         <h1 class="label">Gpu Freq</h1>
         <!-- <h1 class="value">{{ramUsage}}</h1> -->
-        <h1 class="value">{{objects.gpuFrequencyO.value | number:'1.1-1' }} {{objects.gpuFrequencyO.unit}}</h1>
+        <h1 class="value">{{sensors.gpuFrequencyO.value | number:'1.1-1' }} {{sensors.gpuFrequencyO.unit}}</h1>
         <h3 class="min">
-          {{objects.gpuFrequencyO.min | number:'1.1-1' }} {{objects.gpuFrequencyO.unit}}
+          {{sensors.gpuFrequencyO.min | number:'1.1-1' }} {{sensors.gpuFrequencyO.unit}}
         </h3>
         <h3 class="max">
-          {{objects.gpuFrequencyO.max | number:'1.1-1' }} {{objects.gpuFrequencyO.unit}}
+          {{sensors.gpuFrequencyO.max | number:'1.1-1' }} {{sensors.gpuFrequencyO.unit}}
         </h3>
       </div>
       <!-- <app-meter [data]=ramUsage [label]="'RAM'" [max]=100></app-meter> -->
@@ -188,12 +188,12 @@
       <div>
         <h1 class="labelsm">VRAM</h1>
         <!-- <h1 class="value">{{gpuVRAM}}</h1> -->
-        <h1 class="valuesm">{{objects.gpuVRAMO.value | number:'1.1-1' }} {{objects.gpuVRAMO.unit}}</h1>
+        <h1 class="valuesm">{{sensors.gpuVRAMO.value | number:'1.1-1' }} {{sensors.gpuVRAMO.unit}}</h1>
         <h3 class="minsm">
-          {{objects.gpuVRAMO.min | number:'1.1-1' }} {{objects.gpuVRAMO.unit}}
+          {{sensors.gpuVRAMO.min | number:'1.1-1' }} {{sensors.gpuVRAMO.unit}}
         </h3>
         <h3 class="maxsm">
-          {{objects.gpuVRAMO.max | number:'1.1-1' }} {{objects.gpuVRAMO.unit}}
+          {{sensors.gpuVRAMO.max | number:'1.1-1' }} {{sensors.gpuVRAMO.unit}}
         </h3>
       </div>
       <!-- <app-meter [data]=gpuVRAM [label]="'VRAM'" [max]=100></app-meter> -->
@@ -206,12 +206,12 @@
       <div>
         <h1 class="labelsm">Gpu Temp</h1>
         <!-- <h1 class="value">{{gpuTemp}}</h1> -->
-        <h1 class="valuesm">{{objects.gpuTempO.value | number:'1.1-1' }} {{objects.gpuTempO.unit}}</h1>
+        <h1 class="valuesm">{{sensors.gpuTempO.value | number:'1.1-1' }} {{sensors.gpuTempO.unit}}</h1>
         <h3 class="minsm">
-          {{objects.gpuTempO.min | number:'1.1-1' }} {{objects.gpuTempO.unit}}
+          {{sensors.gpuTempO.min | number:'1.1-1' }} {{sensors.gpuTempO.unit}}
         </h3>
         <h3 class="maxsm">
-          {{objects.gpuTempO.max | number:'1.1-1' }} {{objects.gpuTempO.unit}}
+          {{sensors.gpuTempO.max | number:'1.1-1' }} {{sensors.gpuTempO.unit}}
         </h3>
       </div>
       <!-- <app-meter [data]=gpuTemp [label]="'Gpu Tmp'" [max]=100></app-meter> -->
@@ -222,12 +222,12 @@
       [rowspan] = "5">
       <div>
         <h1 class="labelsm">VRAM Temp</h1>
-        <h1 class="valuesm">{{objects.vramTempO.value | number:'1.1-1' }} {{objects.vramTempO.unit}}</h1>
+        <h1 class="valuesm">{{sensors.vramTempO.value | number:'1.1-1' }} {{sensors.vramTempO.unit}}</h1>
         <h3 class="minsm">
-          {{objects.vramTempO.min | number:'1.1-1' }} {{objects.vramTempO.unit}}
+          {{sensors.vramTempO.min | number:'1.1-1' }} {{sensors.vramTempO.unit}}
         </h3>
         <h3 class="maxsm">
-          {{objects.vramTempO.max | number:'1.1-1' }} {{objects.vramTempO.unit}}
+          {{sensors.vramTempO.max | number:'1.1-1' }} {{sensors.vramTempO.unit}}
         </h3>
       </div>
       <!-- <app-meter [data]=ramUsage [label]="'RAM'" [max]=100></app-meter> -->
@@ -242,12 +242,12 @@
       <div>
         <h1 class="labelsm">Gpu Hotspot Temp</h1>
         <!-- <h1 class="value">{{gpuTemp}}</h1> -->
-        <h1 class="valuesm">{{objects.hotSpotTempO.value | number:'1.1-1' }} {{objects.hotSpotTempO.unit}}</h1>
+        <h1 class="valuesm">{{sensors.hotSpotTempO.value | number:'1.1-1' }} {{sensors.hotSpotTempO.unit}}</h1>
         <h3 class="minsm">
-          {{objects.hotSpotTempO.min | number:'1.1-1' }} {{objects.hotSpotTempO.unit}}
+          {{sensors.hotSpotTempO.min | number:'1.1-1' }} {{sensors.hotSpotTempO.unit}}
         </h3>
         <h3 class="maxsm">
-          {{objects.hotSpotTempO.max | number:'1.1-1' }} {{objects.hotSpotTempO.unit}}
+          {{sensors.hotSpotTempO.max | number:'1.1-1' }} {{sensors.hotSpotTempO.unit}}
         </h3>
       </div>
       <!-- <app-meter [data]=gpuTemp [label]="'Gpu Tmp'" [max]=100></app-meter> -->
@@ -260,12 +260,12 @@
       <div>
         <h1 class="labelsm">Gpu Fan RPM</h1>
         <!-- <h1 class="value">{{gpuRPM}}</h1> -->
-        <h1 class="valuesm">{{objects.gpuRPMO.value | number:'1.1-1' }} {{objects.gpuRPMO.unit}}</h1>
+        <h1 class="valuesm">{{sensors.gpuRPMO.value | number:'1.1-1' }} {{sensors.gpuRPMO.unit}}</h1>
         <h3 class="minsm">
-          {{objects.gpuRPMO.min | number:'1.1-1' }} {{objects.gpuRPMO.unit}}
+          {{sensors.gpuRPMO.min | number:'1.1-1' }} {{sensors.gpuRPMO.unit}}
         </h3>
         <h3 class="maxsm">
-          {{objects.gpuRPMO.max | number:'1.1-1' }} {{objects.gpuRPMO.unit}}
+          {{sensors.gpuRPMO.max | number:'1.1-1' }} {{sensors.gpuRPMO.unit}}
         </h3>
       </div>
       <!-- <app-meter [data]=gpuRPM [label]="'Gpu RPM'" [max]=2500></app-meter> -->
@@ -279,12 +279,12 @@
       <div>
         <h1 class="label">Gpu Power</h1>
         <!-- <h1 class="value">{{gpuPower}}</h1> -->
-        <h1 class="value">{{objects.gpuPowerO.value | number:'1.1-1' }} {{objects.gpuPowerO.unit}}</h1>
+        <h1 class="value">{{sensors.gpuPowerO.value | number:'1.1-1' }} {{sensors.gpuPowerO.unit}}</h1>
         <h3 class="min">
-          {{objects.gpuPowerO.min | number:'1.1-1' }} {{objects.gpuPowerO.unit}}
+          {{sensors.gpuPowerO.min | number:'1.1-1' }} {{sensors.gpuPowerO.unit}}
         </h3>
         <h3 class="max">
-          {{objects.gpuPowerO.max | number:'1.1-1' }} {{objects.gpuPowerO.unit}}
+          {{sensors.gpuPowerO.max | number:'1.1-1' }} {{sensors.gpuPowerO.unit}}
         </h3>
       </div>
       <!-- <app-meter [data]=gpuPower [label]="'Gpu Pwr'" [max]=190></app-meter> -->
@@ -295,12 +295,12 @@
       <div>
         <h1 class="label">Gpu Load</h1>
         <!-- <h1 class="value">{{gpuLoad}}</h1> -->
-        <h1 class="value">{{objects.gpuLoadO.value | number:'1.1-1' }} {{objects.gpuLoadO.unit}}</h1>
+        <h1 class="value">{{sensors.gpuLoadO.value | number:'1.1-1' }} {{sensors.gpuLoadO.unit}}</h1>
         <h3 class="min">
-          {{objects.gpuLoadO.min | number:'1.1-1' }} {{objects.gpuLoadO.unit}}
+          {{sensors.gpuLoadO.min | number:'1.1-1' }} {{sensors.gpuLoadO.unit}}
         </h3>
         <h3 class="max">
-          {{objects.gpuLoadO.max | number:'1.1-1' }} {{objects.gpuLoadO.unit}}
+          {{sensors.gpuLoadO.max | number:'1.1-1' }} {{sensors.gpuLoadO.unit}}
         </h3>
       </div>
       <!-- <app-meter [data]=ssdTemp [label]="'SSD Tmp'" [max]=100></app-meter> -->
@@ -311,12 +311,12 @@
       [rowspan] = "5">
       <div>
         <h1 class="labelsm">Cpu Pump RPM</h1>
-        <h1 class="valuesm">{{objects.cpuRPMO.value | number:'1.1-1' }} {{objects.cpuRPMO.unit}}</h1>
+        <h1 class="valuesm">{{sensors.cpuRPMO.value | number:'1.1-1' }} {{sensors.cpuRPMO.unit}}</h1>
          <h3 class="minsm">
-          {{objects.cpuRPMO.min | number:'1.1-1' }} {{objects.cpuRPMO.unit}}
+          {{sensors.cpuRPMO.min | number:'1.1-1' }} {{sensors.cpuRPMO.unit}}
         </h3>
         <h3 class="maxsm">
-          {{objects.cpuRPMO.max | number:'1.1-1' }} {{objects.cpuRPMO.unit}}
+          {{sensors.cpuRPMO.max | number:'1.1-1' }} {{sensors.cpuRPMO.unit}}
         </h3>
       </div>
     </mat-grid-tile>
@@ -327,12 +327,12 @@
       [rowspan] = "5">
       <div>
         <h1 class="labelsm">sn850 Temp</h1>
-        <h1 class="valuesm">{{objects.sn850TempO.value | number:'1.1-1' }} {{objects.sn850TempO.unit}}</h1>
+        <h1 class="valuesm">{{sensors.sn850TempO.value | number:'1.1-1' }} {{sensors.sn850TempO.unit}}</h1>
          <h3 class="minsm">
-          {{objects.sn850TempO.min | number:'1.1-1' }} {{objects.sn850TempO.unit}}
+          {{sensors.sn850TempO.min | number:'1.1-1' }} {{sensors.sn850TempO.unit}}
         </h3>
         <h3 class="maxsm">
-          {{objects.sn850TempO.max | number:'1.1-1' }} {{objects.sn850TempO.unit}}
+          {{sensors.sn850TempO.max | number:'1.1-1' }} {{sensors.sn850TempO.unit}}
         </h3>
       </div>
       <!-- <app-meter [data]=ssdTemp [label]="'SSD Tmp'" [max]=100></app-meter> -->
@@ -347,12 +347,12 @@
       <div>
         <h1 class="label">Water Temp</h1>
         <!-- <h1 class="value">{{waterTemp}}</h1> -->
-        <h1 class="value">{{objects.waterTempO.value | number:'1.1-1' }} {{objects.waterTempO.unit}}</h1>
+        <h1 class="value">{{sensors.waterTempO.value | number:'1.1-1' }} {{sensors.waterTempO.unit}}</h1>
         <h3 class="min">
-          {{objects.waterTempO.min | number:'1.1-1' }} {{objects.waterTempO.unit}}
+          {{sensors.waterTempO.min | number:'1.1-1' }} {{sensors.waterTempO.unit}}
         </h3>
         <h3 class="max">
-          {{objects.waterTempO.max | number:'1.1-1' }} {{objects.waterTempO.unit}}
+          {{sensors.waterTempO.max | number:'1.1-1' }} {{sensors.waterTempO.unit}}
         </h3>
       </div>
       <!-- <app-meter [data]=ssdTemp [label]="'SSD Tmp'" [max]=100></app-meter> -->
@@ -361,9 +361,9 @@
       [colspan] = "10"
       [rowspan] = "10">
       <div class="multi">
-        <h2 class="multilabelA">Fan 1: <code class="innercolor"> {{objects.fan1O.value}} rpm</code></h2>
-        <h2 class="multilabelB">Fan 2: <code class="innercolor"> {{objects.fan2O.value}} rpm</code></h2>
-        <h2 class="multilabelC">Fan 3: <code class="innercolor"> {{objects.fan3O.value}} rpm</code></h2>
+        <h2 class="multilabelA">Fan 1: <code class="innercolor"> {{sensors.fan1O.value}} rpm</code></h2>
+        <h2 class="multilabelB">Fan 2: <code class="innercolor"> {{sensors.fan2O.value}} rpm</code></h2>
+        <h2 class="multilabelC">Fan 3: <code class="innercolor"> {{sensors.fan3O.value}} rpm</code></h2>
 
         <!-- <h1 class="label">Svr Uptime</h1>
         <h1 class="smallvalue">{{serverUptime}}</h1> -->
@@ -376,12 +376,12 @@
       [rowspan] = "5">
       <div>
         <h1 class="labelsm">Internet Up</h1>
-        <h1 class="valuesm">{{objects.internetUpActivityO.value | number:'1.1-1' }} {{objects.internetUpActivityO.unit}}</h1>
+        <h1 class="valuesm">{{sensors.internetUpActivityO.value | number:'1.1-1' }} {{sensors.internetUpActivityO.unit}}</h1>
          <h3 class="minsm">
-          {{objects.internetUpActivityO.min | number:'1.1-1' }} {{objects.internetUpActivityO.unit}}
+          {{sensors.internetUpActivityO.min | number:'1.1-1' }} {{sensors.internetUpActivityO.unit}}
         </h3>
         <h3 class="maxsm">
-          {{objects.internetUpActivityO.max | number:'1.1-1' }} {{objects.internetUpActivityO.unit}}
+          {{sensors.internetUpActivityO.max | number:'1.1-1' }} {{sensors.internetUpActivityO.unit}}
         </h3>
       </div>
       <!-- <app-meter [data]=ssdTemp [label]="'SSD Tmp'" [max]=100></app-meter> -->
@@ -406,12 +406,12 @@
       <div>
         <h1 class="label">Mossfet Temp</h1>
         <!-- <h1 class="value">{{moboMosfetTemp}}</h1> -->
-        <h1 class="value">{{objects.moboMosfetTempO.value | number:'1.1-1' }} {{objects.moboMosfetTempO.unit}}</h1>
+        <h1 class="value">{{sensors.moboMosfetTempO.value | number:'1.1-1' }} {{sensors.moboMosfetTempO.unit}}</h1>
         <h3 class="min">
-          {{objects.moboMosfetTempO.min | number:'1.1-1' }} {{objects.moboMosfetTempO.unit}}
+          {{sensors.moboMosfetTempO.min | number:'1.1-1' }} {{sensors.moboMosfetTempO.unit}}
         </h3>
         <h3 class="max">
-          {{objects.moboMosfetTempO.max | number:'1.1-1' }} {{objects.moboMosfetTempO.unit}}
+          {{sensors.moboMosfetTempO.max | number:'1.1-1' }} {{sensors.moboMosfetTempO.unit}}
         </h3>
       </div>
       <!-- <app-meter [data]=moboMosfetTemp [label]="'Mossfet'" [max]=100></app-meter> -->
@@ -436,12 +436,12 @@
       [rowspan] = "5">
       <div>
         <h1 class="labelsm">840Evo Temp</h1>
-        <h1 class="valuesm">{{objects.evo840TempO.value | number:'1.1-1' }} {{objects.evo840TempO.unit}}</h1>
+        <h1 class="valuesm">{{sensors.evo840TempO.value | number:'1.1-1' }} {{sensors.evo840TempO.unit}}</h1>
          <h3 class="minsm">
-          {{objects.evo840TempO.min | number:'1.1-1' }} {{objects.evo840TempO.unit}}
+          {{sensors.evo840TempO.min | number:'1.1-1' }} {{sensors.evo840TempO.unit}}
         </h3>
         <h3 class="maxsm">
-          {{objects.evo840TempO.max | number:'1.1-1' }} {{objects.evo840TempO.unit}}
+          {{sensors.evo840TempO.max | number:'1.1-1' }} {{sensors.evo840TempO.unit}}
         </h3>
       </div>
       <!-- <app-meter [data]=ssdTemp [label]="'SSD Tmp'" [max]=100></app-meter> -->
@@ -452,12 +452,12 @@
       [rowspan] = "5">
       <div>
         <h1 class="labelsm">Internet Down</h1>
-        <h1 class="valuesm">{{objects.internetDownActivityO.value | number:'1.1-1' }} {{objects.internetDownActivityO.unit}}</h1>
+        <h1 class="valuesm">{{sensors.internetDownActivityO.value | number:'1.1-1' }} {{sensors.internetDownActivityO.unit}}</h1>
          <h3 class="minsm">
-          {{objects.internetDownActivityO.min | number:'1.1-1' }} {{objects.internetDownActivityO.unit}}
+          {{sensors.internetDownActivityO.min | number:'1.1-1' }} {{sensors.internetDownActivityO.unit}}
         </h3>
         <h3 class="maxsm">
-          {{objects.internetDownActivityO.max | number:'1.1-1' }} {{objects.internetDownActivityO.unit}}
+          {{sensors.internetDownActivityO.max | number:'1.1-1' }} {{sensors.internetDownActivityO.unit}}
         </h3>
       </div>
       <!-- <app-meter [data]=ssdTemp [label]="'SSD Tmp'" [max]=100></app-meter> -->
