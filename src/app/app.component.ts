@@ -436,6 +436,12 @@ export class AppComponent implements OnInit {
               }
             }
           }
+
+          // tslint:disable-next-line: forin
+          for (let s in this.sensors) {
+            this.sensors[s].max = -1;
+            this.sensors[s].min = 99999999;
+          }
           console.log(this.cpuFrequencyIndexes);
           firstCall = false;
         }
