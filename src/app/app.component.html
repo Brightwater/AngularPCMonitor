@@ -1,470 +1,613 @@
-<div class="mat-class">
-  <mat-grid-list cols = "60" rowHeight={{setH}}>
-    <mat-grid-tile
-      id="1"
-      [colspan] = "10"
-      [rowspan] = "10">
-      <div class="infoContainer">
-        <h1 class="label">Cpu Load</h1>
-        <h1 class="value">{{sensors.cpuLoadO.value | number:'1.1-1' }} {{sensors.cpuLoadO.unit}}</h1>
-        <h3 class="min">
-          {{sensors.cpuLoadO.min | number:'1.1-1' }} {{sensors.cpuLoadO.unit}}
-        </h3>
-        <h3 class="max">
-          {{sensors.cpuLoadO.max | number:'1.1-1' }} {{sensors.cpuLoadO.unit}}
-        </h3>
-      </div>
-
-      <!--<app-meter [data]=cpuLoad [label]="'Cpu'" [max]=100></app-meter>-->
-    </mat-grid-tile>
-
-    <mat-grid-tile
-      [colspan] = "10"
-      [rowspan] = "5">
-      <div>
-        <h1 class="labelsm">CCD1 Temp</h1>
-        <!-- <h1 class="value">{{sensors.cpuTempCCD1O.value}}</h1> -->
-        <h1 class="valuesm">{{sensors.cpuTempCCD1O.value | number:'1.1-1' }} {{sensors.cpuTempCCD1O.unit}}</h1>
-        <h3 class="minsm">
-          {{sensors.cpuTempCCD1O.min | number:'1.1-1' }} {{sensors.cpuTempCCD1O.unit}}
-        </h3>
-        <h3 class="maxsm">
-          {{sensors.cpuTempCCD1O.max | number:'1.1-1' }} {{sensors.cpuTempCCD1O.unit}}
-        </h3>
-      </div>
-      <!-- <app-meter [data]=cpuTemp [label]="'Cpu Tmp'" [max]=100></app-meter> -->
-    </mat-grid-tile>
-
-    <mat-grid-tile
-      [colspan] = "10"
-      [rowspan] = "5">
-      <div>
-        <h1 class="labelsm">Cpu Max Freq</h1>
-        <!-- <h1 class="value">{{cpuRPM}}</h1> -->
-        <h1 class="valuesm">{{sensors.cpuMaxFreqO.value | number:'1.1-1' }} {{sensors.cpuMaxFreqO.unit}}</h1>
-        <h3 class="minsm">
-          {{sensors.cpuMaxFreqO.min | number:'1.1-1' }} {{sensors.cpuMaxFreqO.unit}}
-        </h3>
-        <h3 class="maxsm">
-          {{sensors.cpuMaxFreqO.max | number:'1.1-1' }} {{sensors.cpuMaxFreqO.unit}}
-        </h3>
-      </div>
-      <!-- <app-meter [data]=cpuRPM [label]="'Cpu Fan'" [max]=3000></app-meter> -->
-    </mat-grid-tile>
-
-    <mat-grid-tile
-      [colspan] = "10"
-      [rowspan] = "10">
-      <div>
-        <h1 class="label">Cpu Pwr</h1>
-        <!-- <h1 class="value">{{cpuPower}}</h1> -->
-        <h1 class="value">{{sensors.cpuPowerO.value | number:'1.1-1' }} {{sensors.cpuPowerO.unit}}</h1>
-        <h3 class="min">
-          {{sensors.cpuPowerO.min | number:'1.1-1' }} {{sensors.cpuPowerO.unit}}
-        </h3>
-        <h3 class="max">
-          {{sensors.cpuPowerO.max | number:'1.1-1' }} {{sensors.cpuPowerO.unit}}
-        </h3>
-      </div>
-      <!-- <app-meter [data]=cpuPower [label]="'Cpu Pwr'" [max]=180></app-meter> -->
-    </mat-grid-tile>
-    <mat-grid-tile
-      [colspan] = "10"
-      [rowspan] = "10">
-      <div>
-        <h1 class="label">Cpu Voltage</h1>
-        <!-- <h1 class="value">{{cpuVoltage}}</h1> -->
-        <h1 class="value">{{sensors.cpuVoltageO.value | number:'1.3-3' }} {{sensors.cpuVoltageO.unit}}</h1>
-        <h3 class="min">
-          {{sensors.cpuVoltageO.min | number:'1.3-3' }} {{sensors.cpuVoltageO.unit}}
-        </h3>
-        <h3 class="max">
-          {{sensors.cpuVoltageO.max | number:'1.3-3' }} {{sensors.cpuVoltageO.unit}}
-        </h3>
-      </div>
-      <!-- <app-meter [data]=cpuVoltage [label]="'Cpu Pwr'" [max]=1.6></app-meter> -->
-    </mat-grid-tile>
-
-
-    <mat-grid-tile
-      [colspan] = "10"
-      [rowspan] = "5">
-      <div>
-        <h1 class="labelsm">RAM</h1>
-        <!-- <h1 class="value">{{ramUsage}}</h1> -->
-        <h1 class="valuesm">{{sensors.ramUsageO.value | number:'1.1-1' }} {{sensors.ramUsageO.unit}}</h1>
-        <h3 class="minsm">
-          {{sensors.ramUsageO.min | number:'1.1-1' }} {{sensors.ramUsageO.unit}}
-        </h3>
-        <h3 class="maxsm">
-          {{sensors.ramUsageO.max | number:'1.1-1' }} {{sensors.ramUsageO.unit}}
-        </h3>
-      </div>
-      <!-- <app-meter [data]=ramUsage [label]="'RAM'" [max]=100></app-meter> -->
-    </mat-grid-tile>
-
-    <mat-grid-tile
-      [colspan] = "10"
-      [rowspan] = "5">
-      <div>
-        <h1 class="labelsm">CCD2 Temp</h1>
-        <!-- <h1 class="value">{{sensors.cpuTempCCD2O.value}}</h1> -->
-        <h1 class="valuesm">{{sensors.cpuTempCCD2O.value | number:'1.1-1' }} {{sensors.cpuTempCCD2O.unit}}</h1>
-        <h3 class="minsm">
-          {{sensors.cpuTempCCD2O.min | number:'1.1-1' }} {{sensors.cpuTempCCD2O.unit}}
-        </h3>
-        <h3 class="maxsm">
-          {{sensors.cpuTempCCD2O.max | number:'1.1-1' }} {{sensors.cpuTempCCD2O.unit}}
-        </h3>
-      </div>
-      <!-- <app-meter [data]=cpuTemp [label]="'Cpu Tmp'" [max]=100></app-meter> -->
-    </mat-grid-tile>
-
-
-
-    <mat-grid-tile
-      [colspan] = "10"
-      [rowspan] = "5">
-      <div>
-        <h1 class="labelsm">Core Max Load</h1>
-        <!-- <h1 class="value">{{cpuRPM}}</h1> -->
-        <h1 class="valuesm">{{sensors.maxCoreLoadO.value | number:'1.1-1' }} {{sensors.maxCoreLoadO.unit}}</h1>
-        <h3 class="minsm">
-          {{sensors.maxCoreLoadO.min | number:'1.1-1' }} {{sensors.maxCoreLoadO.unit}}
-        </h3>
-        <h3 class="maxsm">
-          {{sensors.maxCoreLoadO.max | number:'1.1-1' }} {{sensors.maxCoreLoadO.unit}}
-        </h3>
-      </div>
-      <!-- <app-meter [data]=cpuRPM [label]="'Cpu Fan'" [max]=3000></app-meter> -->
-    </mat-grid-tile>
-
-    <mat-grid-tile
-      [colspan] = "10"
-      [rowspan] = "5">
-      <div>
-        <h1 class="labelsm">RAM Temp</h1>
-        <h1 class="valuesm">{{sensors.ramTempO.value | number:'1.1-1' }} {{sensors.ramTempO.unit}}</h1>
-        <h3 class="minsm">
-          {{sensors.ramTempO.min | number:'1.1-1' }} {{sensors.ramTempO.unit}}
-        </h3>
-        <h3 class="maxsm">
-          {{sensors.ramTempO.max | number:'1.1-1' }} {{sensors.ramTempO.unit}}
-        </h3>
-      </div>
-      <!-- <app-meter [data]=ramUsage [label]="'RAM'" [max]=100></app-meter> -->
-    </mat-grid-tile>
-
-    <mat-grid-tile
-      [colspan] = "30"
-      [rowspan] = "20">
-      <app-graph [idata]=chartData></app-graph>
-    </mat-grid-tile>
-
-
-
-    <mat-grid-tile
-      [colspan] = "10"
-      [rowspan] = "10">
-      <div>
-        <h1 class="label">Gpu Freq</h1>
-        <!-- <h1 class="value">{{ramUsage}}</h1> -->
-        <h1 class="value">{{sensors.gpuFrequencyO.value | number:'1.1-1' }} {{sensors.gpuFrequencyO.unit}}</h1>
-        <h3 class="min">
-          {{sensors.gpuFrequencyO.min | number:'1.1-1' }} {{sensors.gpuFrequencyO.unit}}
-        </h3>
-        <h3 class="max">
-          {{sensors.gpuFrequencyO.max | number:'1.1-1' }} {{sensors.gpuFrequencyO.unit}}
-        </h3>
-      </div>
-      <!-- <app-meter [data]=ramUsage [label]="'RAM'" [max]=100></app-meter> -->
-    </mat-grid-tile>
-
-
-
-    <mat-grid-tile
-      [colspan] = "10"
-      [rowspan] = "5">
-      <div>
-        <h1 class="labelsm">VRAM</h1>
-        <!-- <h1 class="value">{{gpuVRAM}}</h1> -->
-        <h1 class="valuesm">{{sensors.gpuVRAMO.value | number:'1.1-1' }} {{sensors.gpuVRAMO.unit}}</h1>
-        <h3 class="minsm">
-          {{sensors.gpuVRAMO.min | number:'1.1-1' }} {{sensors.gpuVRAMO.unit}}
-        </h3>
-        <h3 class="maxsm">
-          {{sensors.gpuVRAMO.max | number:'1.1-1' }} {{sensors.gpuVRAMO.unit}}
-        </h3>
-      </div>
-      <!-- <app-meter [data]=gpuVRAM [label]="'VRAM'" [max]=100></app-meter> -->
-    </mat-grid-tile>
-
-
-    <mat-grid-tile
-      [colspan] = "10"
-      [rowspan] = "5">
-      <div>
-        <h1 class="labelsm">Gpu Temp</h1>
-        <!-- <h1 class="value">{{gpuTemp}}</h1> -->
-        <h1 class="valuesm">{{sensors.gpuTempO.value | number:'1.1-1' }} {{sensors.gpuTempO.unit}}</h1>
-        <h3 class="minsm">
-          {{sensors.gpuTempO.min | number:'1.1-1' }} {{sensors.gpuTempO.unit}}
-        </h3>
-        <h3 class="maxsm">
-          {{sensors.gpuTempO.max | number:'1.1-1' }} {{sensors.gpuTempO.unit}}
-        </h3>
-      </div>
-      <!-- <app-meter [data]=gpuTemp [label]="'Gpu Tmp'" [max]=100></app-meter> -->
-    </mat-grid-tile>
-
-    <mat-grid-tile
-      [colspan] = "10"
-      [rowspan] = "5">
-      <div>
-        <h1 class="labelsm">VRAM Temp</h1>
-        <h1 class="valuesm">{{sensors.vramTempO.value | number:'1.1-1' }} {{sensors.vramTempO.unit}}</h1>
-        <h3 class="minsm">
-          {{sensors.vramTempO.min | number:'1.1-1' }} {{sensors.vramTempO.unit}}
-        </h3>
-        <h3 class="maxsm">
-          {{sensors.vramTempO.max | number:'1.1-1' }} {{sensors.vramTempO.unit}}
-        </h3>
-      </div>
-      <!-- <app-meter [data]=ramUsage [label]="'RAM'" [max]=100></app-meter> -->
-    </mat-grid-tile>
-
-
-
-
-    <mat-grid-tile
-      [colspan] = "10"
-      [rowspan] = "5">
-      <div>
-        <h1 class="labelsm">Gpu Hotspot Temp</h1>
-        <!-- <h1 class="value">{{gpuTemp}}</h1> -->
-        <h1 class="valuesm">{{sensors.hotSpotTempO.value | number:'1.1-1' }} {{sensors.hotSpotTempO.unit}}</h1>
-        <h3 class="minsm">
-          {{sensors.hotSpotTempO.min | number:'1.1-1' }} {{sensors.hotSpotTempO.unit}}
-        </h3>
-        <h3 class="maxsm">
-          {{sensors.hotSpotTempO.max | number:'1.1-1' }} {{sensors.hotSpotTempO.unit}}
-        </h3>
-      </div>
-      <!-- <app-meter [data]=gpuTemp [label]="'Gpu Tmp'" [max]=100></app-meter> -->
-    </mat-grid-tile>
-
-
-    <mat-grid-tile
-      [colspan] = "10"
-      [rowspan] = "5">
-      <div>
-        <h1 class="labelsm">Gpu Fan RPM</h1>
-        <!-- <h1 class="value">{{gpuRPM}}</h1> -->
-        <h1 class="valuesm">{{sensors.gpuRPMO.value | number:'1.1-1' }} {{sensors.gpuRPMO.unit}}</h1>
-        <h3 class="minsm">
-          {{sensors.gpuRPMO.min | number:'1.1-1' }} {{sensors.gpuRPMO.unit}}
-        </h3>
-        <h3 class="maxsm">
-          {{sensors.gpuRPMO.max | number:'1.1-1' }} {{sensors.gpuRPMO.unit}}
-        </h3>
-      </div>
-      <!-- <app-meter [data]=gpuRPM [label]="'Gpu RPM'" [max]=2500></app-meter> -->
-    </mat-grid-tile>
-
-
-
-    <mat-grid-tile
-      [colspan] = "10"
-      [rowspan] = "10">
-      <div>
-        <h1 class="label">Gpu Power</h1>
-        <!-- <h1 class="value">{{gpuPower}}</h1> -->
-        <h1 class="value">{{sensors.gpuPowerO.value | number:'1.1-1' }} {{sensors.gpuPowerO.unit}}</h1>
-        <h3 class="min">
-          {{sensors.gpuPowerO.min | number:'1.1-1' }} {{sensors.gpuPowerO.unit}}
-        </h3>
-        <h3 class="max">
-          {{sensors.gpuPowerO.max | number:'1.1-1' }} {{sensors.gpuPowerO.unit}}
-        </h3>
-      </div>
-      <!-- <app-meter [data]=gpuPower [label]="'Gpu Pwr'" [max]=190></app-meter> -->
-    </mat-grid-tile>
-    <mat-grid-tile
-      [colspan] = "10"
-      [rowspan] = "10">
-      <div>
-        <h1 class="label">Gpu Load</h1>
-        <!-- <h1 class="value">{{gpuLoad}}</h1> -->
-        <h1 class="value">{{sensors.gpuLoadO.value | number:'1.1-1' }} {{sensors.gpuLoadO.unit}}</h1>
-        <h3 class="min">
-          {{sensors.gpuLoadO.min | number:'1.1-1' }} {{sensors.gpuLoadO.unit}}
-        </h3>
-        <h3 class="max">
-          {{sensors.gpuLoadO.max | number:'1.1-1' }} {{sensors.gpuLoadO.unit}}
-        </h3>
-      </div>
-      <!-- <app-meter [data]=ssdTemp [label]="'SSD Tmp'" [max]=100></app-meter> -->
-    </mat-grid-tile>
-
-    <mat-grid-tile
-      [colspan] = "10"
-      [rowspan] = "5">
-      <div>
-        <h1 class="labelsm">Cpu Pump RPM</h1>
-        <h1 class="valuesm">{{sensors.cpuRPMO.value | number:'1.1-1' }} {{sensors.cpuRPMO.unit}}</h1>
-         <h3 class="minsm">
-          {{sensors.cpuRPMO.min | number:'1.1-1' }} {{sensors.cpuRPMO.unit}}
-        </h3>
-        <h3 class="maxsm">
-          {{sensors.cpuRPMO.max | number:'1.1-1' }} {{sensors.cpuRPMO.unit}}
-        </h3>
-      </div>
-    </mat-grid-tile>
-
-
-    <mat-grid-tile
-      [colspan] = "10"
-      [rowspan] = "5">
-      <div>
-        <h1 class="labelsm">sn850 Temp</h1>
-        <h1 class="valuesm">{{sensors.sn850TempO.value | number:'1.1-1' }} {{sensors.sn850TempO.unit}}</h1>
-         <h3 class="minsm">
-          {{sensors.sn850TempO.min | number:'1.1-1' }} {{sensors.sn850TempO.unit}}
-        </h3>
-        <h3 class="maxsm">
-          {{sensors.sn850TempO.max | number:'1.1-1' }} {{sensors.sn850TempO.unit}}
-        </h3>
-      </div>
-      <!-- <app-meter [data]=ssdTemp [label]="'SSD Tmp'" [max]=100></app-meter> -->
-    </mat-grid-tile>
-
-
-
-
-    <mat-grid-tile
-      [colspan] = "10"
-      [rowspan] = "10">
-      <div>
-        <h1 class="label">Water Temp</h1>
-        <!-- <h1 class="value">{{waterTemp}}</h1> -->
-        <h1 class="value">{{sensors.waterTempO.value | number:'1.1-1' }} {{sensors.waterTempO.unit}}</h1>
-        <h3 class="min">
-          {{sensors.waterTempO.min | number:'1.1-1' }} {{sensors.waterTempO.unit}}
-        </h3>
-        <h3 class="max">
-          {{sensors.waterTempO.max | number:'1.1-1' }} {{sensors.waterTempO.unit}}
-        </h3>
-      </div>
-      <!-- <app-meter [data]=ssdTemp [label]="'SSD Tmp'" [max]=100></app-meter> -->
-    </mat-grid-tile>
-    <mat-grid-tile
-      [colspan] = "10"
-      [rowspan] = "10">
-      <div class="multi">
-        <h2 class="multilabelA">Fan 1: <code class="innercolor"> {{sensors.fan1O.value}} rpm</code></h2>
-        <h2 class="multilabelB">Fan 2: <code class="innercolor"> {{sensors.fan2O.value}} rpm</code></h2>
-        <h2 class="multilabelC">Fan 3: <code class="innercolor"> {{sensors.fan3O.value}} rpm</code></h2>
-
-        <!-- <h1 class="label">Svr Uptime</h1>
-        <h1 class="smallvalue">{{serverUptime}}</h1> -->
-      </div>
-      <!-- <app-meter [data]=ssdTemp [label]="'SSD Tmp'" [max]=100></app-meter> -->
-    </mat-grid-tile>
-
-    <mat-grid-tile
-      [colspan] = "10"
-      [rowspan] = "5">
-      <div>
-        <h1 class="labelsm">Internet Up</h1>
-        <h1 class="valuesm">{{sensors.internetUpActivityO.value | number:'1.1-1' }} {{sensors.internetUpActivityO.unit}}</h1>
-         <h3 class="minsm">
-          {{sensors.internetUpActivityO.min | number:'1.1-1' }} {{sensors.internetUpActivityO.unit}}
-        </h3>
-        <h3 class="maxsm">
-          {{sensors.internetUpActivityO.max | number:'1.1-1' }} {{sensors.internetUpActivityO.unit}}
-        </h3>
-      </div>
-      <!-- <app-meter [data]=ssdTemp [label]="'SSD Tmp'" [max]=100></app-meter> -->
-    </mat-grid-tile>
-
-    <!-- <mat-grid-tile
-      [colspan] = "10"
-      [rowspan] = "10">
-      <div>
-        <h1 class="label">Svr RAM</h1>
-        <h1 class="value">{{serverRam}}</h1>
-      </div>
-       <app-meter [data]=ssdTemp [label]="'SSD Tmp'" [max]=100></app-meter>
-
-    </mat-grid-tile> -->
-
-
-
-    <mat-grid-tile
-      [colspan] = "10"
-      [rowspan] = "10">
-      <div>
-        <h1 class="label">Mossfet Temp</h1>
-        <!-- <h1 class="value">{{moboMosfetTemp}}</h1> -->
-        <h1 class="value">{{sensors.moboMosfetTempO.value | number:'1.1-1' }} {{sensors.moboMosfetTempO.unit}}</h1>
-        <h3 class="min">
-          {{sensors.moboMosfetTempO.min | number:'1.1-1' }} {{sensors.moboMosfetTempO.unit}}
-        </h3>
-        <h3 class="max">
-          {{sensors.moboMosfetTempO.max | number:'1.1-1' }} {{sensors.moboMosfetTempO.unit}}
-        </h3>
-      </div>
-      <!-- <app-meter [data]=moboMosfetTemp [label]="'Mossfet'" [max]=100></app-meter> -->
-      <!--<app-graph [idata]=chartData1 [chartData]=cD1 [height]=150 [width]=220></app-graph>-->
-    </mat-grid-tile>
-    <mat-grid-tile
-      [colspan] = "10"
-      [rowspan] = "10">
-      <div class="multi">
-        <h2 class="multilabelA">SCpu: <code class="innercolor"> {{serverCpuLoad}}</code></h2>
-        <h2 class="multilabelB">SCpu Temp: <code class="innercolor"> {{serverCpuTemp}}</code></h2>
-        <h2 class="multilabelC">SCpu Ram: <code class="innercolor"> {{serverRam}}</code></h2>
-
-        <!-- <h1 class="label">Svr Uptime</h1>
-        <h1 class="smallvalue">{{serverUptime}}</h1> -->
-      </div>
-      <!-- <app-meter [data]=ssdTemp [label]="'SSD Tmp'" [max]=100></app-meter> -->
-    </mat-grid-tile>
-
-    <mat-grid-tile
-      [colspan] = "10"
-      [rowspan] = "5">
-      <div>
-        <h1 class="labelsm">840Evo Temp</h1>
-        <h1 class="valuesm">{{sensors.evo840TempO.value | number:'1.1-1' }} {{sensors.evo840TempO.unit}}</h1>
-         <h3 class="minsm">
-          {{sensors.evo840TempO.min | number:'1.1-1' }} {{sensors.evo840TempO.unit}}
-        </h3>
-        <h3 class="maxsm">
-          {{sensors.evo840TempO.max | number:'1.1-1' }} {{sensors.evo840TempO.unit}}
-        </h3>
-      </div>
-      <!-- <app-meter [data]=ssdTemp [label]="'SSD Tmp'" [max]=100></app-meter> -->
-    </mat-grid-tile>
-
-    <mat-grid-tile
-      [colspan] = "10"
-      [rowspan] = "5">
-      <div>
-        <h1 class="labelsm">Internet Down</h1>
-        <h1 class="valuesm">{{sensors.internetDownActivityO.value | number:'1.1-1' }} {{sensors.internetDownActivityO.unit}}</h1>
-         <h3 class="minsm">
-          {{sensors.internetDownActivityO.min | number:'1.1-1' }} {{sensors.internetDownActivityO.unit}}
-        </h3>
-        <h3 class="maxsm">
-          {{sensors.internetDownActivityO.max | number:'1.1-1' }} {{sensors.internetDownActivityO.unit}}
-        </h3>
-      </div>
-      <!-- <app-meter [data]=ssdTemp [label]="'SSD Tmp'" [max]=100></app-meter> -->
-    </mat-grid-tile>
-  </mat-grid-list>
+<div (click)="setSwitch()" style="width: 100%; height: 100%;">
+  <div class="mat-class" *ngIf="switch">
+    <mat-grid-list cols = "60" rowHeight={{setH}}>
+      <mat-grid-tile
+        id="1"
+        [colspan] = "10"
+        [rowspan] = "10">
+        <div class="infoContainer">
+          <h1 class="label">Flypool Blocks/hr: </h1>
+          <h1 class="valuesm">{{poolBlocksPerHour}}</h1>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile
+        id="1"
+        [colspan] = "10"
+        [rowspan] = "10">
+        <div class="infoContainer">
+          <h1 class="label">Flypool Since Blk: </h1>
+          <h1 class="valuesm">{{poolTImeSinceLastBlock}}</h1>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile
+        id="1"
+        [colspan] = "10"
+        [rowspan] = "10">
+        <div class="infoContainer">
+          <h1 class="label">Flypool Hashrate: </h1>
+          <h1 class="valuesm">{{poolHash}}</h1>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile
+        id="1"
+        [colspan] = "10"
+        [rowspan] = "10">
+        <div class="infoContainer">
+          <h1 class="label">ERG Price: </h1>
+          <h1 class="valuesm">{{poolErgoPrice}}</h1>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile
+        id="1"
+        [colspan] = "10"
+        [rowspan] = "10">
+        <div class="infoContainer">
+          <h1 class="label">Curr Hash: </h1>
+          <h1 class="valuesm">{{poolCurrentHashrate}}</h1>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile
+        id="1"
+        [colspan] = "10"
+        [rowspan] = "10">
+        <div class="infoContainer">
+          <h1 class="label">Avg Hash: </h1>
+          <h1 class="valuesm">{{poolAverageHashrate}}</h1>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile
+        id="1"
+        [colspan] = "10"
+        [rowspan] = "10">
+        <div class="infoContainer">
+          <h1 class="label">Shares: </h1>
+          <h1 class="valuesm">{{poolValidShares}}</h1>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile
+        id="1"
+        [colspan] = "10"
+        [rowspan] = "10">
+        <div class="infoContainer">
+          <h1 class="label">Active GPUs: </h1>
+          <h1 class="valuesm">{{poolActiveWorkers}}</h1>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile
+        id="1"
+        [colspan] = "10"
+        [rowspan] = "10">
+        <div class="infoContainer">
+          <h1 class="label">Unconfirmed Bal: </h1>
+          <h1 class="valuesm">{{poolUnconfirmed}}</h1>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile
+        id="1"
+        [colspan] = "10"
+        [rowspan] = "10">
+        <div class="infoContainer">
+          <h1 class="label">Unpaid Bal: </h1>
+          <h1 class="valuesm">{{poolUnpaid}}</h1>
+        </div>
+      </mat-grid-tile>
+      
+      <mat-grid-tile
+        id="1"
+        [colspan] = "10"
+        [rowspan] = "10">
+        <div class="infoContainer">
+          <h1 class="label">Coins/Day: </h1>
+          <h1 class="valuesm">{{poolCoinsPerDay}}</h1>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile
+        id="1"
+        [colspan] = "10"
+        [rowspan] = "10">
+        <div class="infoContainer">
+          <h1 class="label">EST. USD/Day: </h1>
+          <h1 class="valuesm">{{poolUSDPerDay}}</h1>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile
+        id="1"
+        [colspan] = "10"
+        [rowspan] = "10">
+        <div class="infoContainer">
+          <h1 class="label">Network Diff: </h1>
+          <h1 class="valuesm">{{networkDiff}}</h1>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile
+        id="1"
+        [colspan] = "10"
+        [rowspan] = "10">
+        <div class="infoContainer">
+          <h1 class="label">Network Hash: </h1>
+          <h1 class="valuesm">{{networkHash}}</h1>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile
+        id="1"
+        [colspan] = "10"
+        [rowspan] = "10">
+        <div class="infoContainer">
+          <h1 class="label">Blocktime: </h1>
+          <h1 class="valuesm">{{networkBlockTime}}</h1>
+        </div>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+  <div class="mat-class" *ngIf="!switch">
+    <mat-grid-list cols = "60" rowHeight={{setH}}>
+      <mat-grid-tile
+        id="1"
+        [colspan] = "10"
+        [rowspan] = "10">
+        <div class="infoContainer">
+          <h1 class="label">Cpu Load</h1>
+          <h1 class="value">{{sensors.cpuLoadO.value | number:'1.1-1' }} {{sensors.cpuLoadO.unit}}</h1>
+          <h3 class="min">
+            {{sensors.cpuLoadO.min | number:'1.1-1' }} {{sensors.cpuLoadO.unit}}
+          </h3>
+          <h3 class="max">
+            {{sensors.cpuLoadO.max | number:'1.1-1' }} {{sensors.cpuLoadO.unit}}
+          </h3>
+        </div>
+  
+        <!--<app-meter [data]=cpuLoad [label]="'Cpu'" [max]=100></app-meter>-->
+      </mat-grid-tile>
+  
+      <mat-grid-tile
+        [colspan] = "10"
+        [rowspan] = "5">
+        <div>
+          <h1 class="labelsm">CCD1 Temp</h1>
+          <!-- <h1 class="value">{{sensors.cpuTempCCD1O.value}}</h1> -->
+          <h1 class="valuesm">{{sensors.cpuTempCCD1O.value | number:'1.1-1' }} {{sensors.cpuTempCCD1O.unit}}</h1>
+          <h3 class="minsm">
+            {{sensors.cpuTempCCD1O.min | number:'1.1-1' }} {{sensors.cpuTempCCD1O.unit}}
+          </h3>
+          <h3 class="maxsm">
+            {{sensors.cpuTempCCD1O.max | number:'1.1-1' }} {{sensors.cpuTempCCD1O.unit}}
+          </h3>
+        </div>
+        <!-- <app-meter [data]=cpuTemp [label]="'Cpu Tmp'" [max]=100></app-meter> -->
+      </mat-grid-tile>
+  
+      <mat-grid-tile
+        [colspan] = "10"
+        [rowspan] = "5">
+        <div>
+          <h1 class="labelsm">Cpu Max Freq</h1>
+          <!-- <h1 class="value">{{cpuRPM}}</h1> -->
+          <h1 class="valuesm">{{sensors.cpuMaxFreqO.value | number:'1.1-1' }} {{sensors.cpuMaxFreqO.unit}}</h1>
+          <h3 class="minsm">
+            {{sensors.cpuMaxFreqO.min | number:'1.1-1' }} {{sensors.cpuMaxFreqO.unit}}
+          </h3>
+          <h3 class="maxsm">
+            {{sensors.cpuMaxFreqO.max | number:'1.1-1' }} {{sensors.cpuMaxFreqO.unit}}
+          </h3>
+        </div>
+        <!-- <app-meter [data]=cpuRPM [label]="'Cpu Fan'" [max]=3000></app-meter> -->
+      </mat-grid-tile>
+  
+      <mat-grid-tile
+        [colspan] = "10"
+        [rowspan] = "10">
+        <div>
+          <h1 class="label">Cpu Pwr</h1>
+          <!-- <h1 class="value">{{cpuPower}}</h1> -->
+          <h1 class="value">{{sensors.cpuPowerO.value | number:'1.1-1' }} {{sensors.cpuPowerO.unit}}</h1>
+          <h3 class="min">
+            {{sensors.cpuPowerO.min | number:'1.1-1' }} {{sensors.cpuPowerO.unit}}
+          </h3>
+          <h3 class="max">
+            {{sensors.cpuPowerO.max | number:'1.1-1' }} {{sensors.cpuPowerO.unit}}
+          </h3>
+        </div>
+        <!-- <app-meter [data]=cpuPower [label]="'Cpu Pwr'" [max]=180></app-meter> -->
+      </mat-grid-tile>
+      <mat-grid-tile
+        [colspan] = "10"
+        [rowspan] = "10">
+        <div>
+          <h1 class="label">Cpu Voltage</h1>
+          <!-- <h1 class="value">{{cpuVoltage}}</h1> -->
+          <h1 class="value">{{sensors.cpuVoltageO.value | number:'1.3-3' }} {{sensors.cpuVoltageO.unit}}</h1>
+          <h3 class="min">
+            {{sensors.cpuVoltageO.min | number:'1.3-3' }} {{sensors.cpuVoltageO.unit}}
+          </h3>
+          <h3 class="max">
+            {{sensors.cpuVoltageO.max | number:'1.3-3' }} {{sensors.cpuVoltageO.unit}}
+          </h3>
+        </div>
+        <!-- <app-meter [data]=cpuVoltage [label]="'Cpu Pwr'" [max]=1.6></app-meter> -->
+      </mat-grid-tile>
+  
+  
+      <mat-grid-tile
+        [colspan] = "10"
+        [rowspan] = "5">
+        <div>
+          <h1 class="labelsm">RAM</h1>
+          <!-- <h1 class="value">{{ramUsage}}</h1> -->
+          <h1 class="valuesm">{{sensors.ramUsageO.value | number:'1.1-1' }} {{sensors.ramUsageO.unit}}</h1>
+          <h3 class="minsm">
+            {{sensors.ramUsageO.min | number:'1.1-1' }} {{sensors.ramUsageO.unit}}
+          </h3>
+          <h3 class="maxsm">
+            {{sensors.ramUsageO.max | number:'1.1-1' }} {{sensors.ramUsageO.unit}}
+          </h3>
+        </div>
+        <!-- <app-meter [data]=ramUsage [label]="'RAM'" [max]=100></app-meter> -->
+      </mat-grid-tile>
+  
+      <mat-grid-tile
+        [colspan] = "10"
+        [rowspan] = "5">
+        <div>
+          <h1 class="labelsm">CCD2 Temp</h1>
+          <!-- <h1 class="value">{{sensors.cpuTempCCD2O.value}}</h1> -->
+          <h1 class="valuesm">{{sensors.cpuTempCCD2O.value | number:'1.1-1' }} {{sensors.cpuTempCCD2O.unit}}</h1>
+          <h3 class="minsm">
+            {{sensors.cpuTempCCD2O.min | number:'1.1-1' }} {{sensors.cpuTempCCD2O.unit}}
+          </h3>
+          <h3 class="maxsm">
+            {{sensors.cpuTempCCD2O.max | number:'1.1-1' }} {{sensors.cpuTempCCD2O.unit}}
+          </h3>
+        </div>
+        <!-- <app-meter [data]=cpuTemp [label]="'Cpu Tmp'" [max]=100></app-meter> -->
+      </mat-grid-tile>
+  
+  
+  
+      <mat-grid-tile
+        [colspan] = "10"
+        [rowspan] = "5">
+        <div>
+          <h1 class="labelsm">Core Max Load</h1>
+          <!-- <h1 class="value">{{cpuRPM}}</h1> -->
+          <h1 class="valuesm">{{sensors.maxCoreLoadO.value | number:'1.1-1' }} {{sensors.maxCoreLoadO.unit}}</h1>
+          <h3 class="minsm">
+            {{sensors.maxCoreLoadO.min | number:'1.1-1' }} {{sensors.maxCoreLoadO.unit}}
+          </h3>
+          <h3 class="maxsm">
+            {{sensors.maxCoreLoadO.max | number:'1.1-1' }} {{sensors.maxCoreLoadO.unit}}
+          </h3>
+        </div>
+        <!-- <app-meter [data]=cpuRPM [label]="'Cpu Fan'" [max]=3000></app-meter> -->
+      </mat-grid-tile>
+  
+      <mat-grid-tile
+        [colspan] = "10"
+        [rowspan] = "5">
+        <div>
+          <h1 class="labelsm">RAM Temp</h1>
+          <h1 class="valuesm">{{sensors.ramTempO.value | number:'1.1-1' }} {{sensors.ramTempO.unit}}</h1>
+          <h3 class="minsm">
+            {{sensors.ramTempO.min | number:'1.1-1' }} {{sensors.ramTempO.unit}}
+          </h3>
+          <h3 class="maxsm">
+            {{sensors.ramTempO.max | number:'1.1-1' }} {{sensors.ramTempO.unit}}
+          </h3>
+        </div>
+        <!-- <app-meter [data]=ramUsage [label]="'RAM'" [max]=100></app-meter> -->
+      </mat-grid-tile>
+  
+      <mat-grid-tile
+        [colspan] = "30"
+        [rowspan] = "20">
+        <app-graph [idata]=chartData></app-graph>
+      </mat-grid-tile>
+  
+  
+  
+      <mat-grid-tile
+        [colspan] = "10"
+        [rowspan] = "10">
+        <div>
+          <h1 class="label">Gpu Freq</h1>
+          <!-- <h1 class="value">{{ramUsage}}</h1> -->
+          <h1 class="value">{{sensors.gpuFrequencyO.value | number:'1.1-1' }} {{sensors.gpuFrequencyO.unit}}</h1>
+          <h3 class="min">
+            {{sensors.gpuFrequencyO.min | number:'1.1-1' }} {{sensors.gpuFrequencyO.unit}}
+          </h3>
+          <h3 class="max">
+            {{sensors.gpuFrequencyO.max | number:'1.1-1' }} {{sensors.gpuFrequencyO.unit}}
+          </h3>
+        </div>
+        <!-- <app-meter [data]=ramUsage [label]="'RAM'" [max]=100></app-meter> -->
+      </mat-grid-tile>
+  
+  
+  
+      <mat-grid-tile
+        [colspan] = "10"
+        [rowspan] = "5">
+        <div>
+          <h1 class="labelsm">VRAM</h1>
+          <!-- <h1 class="value">{{gpuVRAM}}</h1> -->
+          <h1 class="valuesm">{{sensors.gpuVRAMO.value | number:'1.1-1' }} {{sensors.gpuVRAMO.unit}}</h1>
+          <h3 class="minsm">
+            {{sensors.gpuVRAMO.min | number:'1.1-1' }} {{sensors.gpuVRAMO.unit}}
+          </h3>
+          <h3 class="maxsm">
+            {{sensors.gpuVRAMO.max | number:'1.1-1' }} {{sensors.gpuVRAMO.unit}}
+          </h3>
+        </div>
+        <!-- <app-meter [data]=gpuVRAM [label]="'VRAM'" [max]=100></app-meter> -->
+      </mat-grid-tile>
+  
+  
+      <mat-grid-tile
+        [colspan] = "10"
+        [rowspan] = "5">
+        <div>
+          <h1 class="labelsm">Gpu Temp</h1>
+          <!-- <h1 class="value">{{gpuTemp}}</h1> -->
+          <h1 class="valuesm">{{sensors.gpuTempO.value | number:'1.1-1' }} {{sensors.gpuTempO.unit}}</h1>
+          <h3 class="minsm">
+            {{sensors.gpuTempO.min | number:'1.1-1' }} {{sensors.gpuTempO.unit}}
+          </h3>
+          <h3 class="maxsm">
+            {{sensors.gpuTempO.max | number:'1.1-1' }} {{sensors.gpuTempO.unit}}
+          </h3>
+        </div>
+        <!-- <app-meter [data]=gpuTemp [label]="'Gpu Tmp'" [max]=100></app-meter> -->
+      </mat-grid-tile>
+  
+      <mat-grid-tile
+        [colspan] = "10"
+        [rowspan] = "5">
+        <div>
+          <h1 class="labelsm">VRAM Temp</h1>
+          <h1 class="valuesm">{{sensors.vramTempO.value | number:'1.1-1' }} {{sensors.vramTempO.unit}}</h1>
+          <h3 class="minsm">
+            {{sensors.vramTempO.min | number:'1.1-1' }} {{sensors.vramTempO.unit}}
+          </h3>
+          <h3 class="maxsm">
+            {{sensors.vramTempO.max | number:'1.1-1' }} {{sensors.vramTempO.unit}}
+          </h3>
+        </div>
+        <!-- <app-meter [data]=ramUsage [label]="'RAM'" [max]=100></app-meter> -->
+      </mat-grid-tile>
+  
+  
+  
+  
+      <mat-grid-tile
+        [colspan] = "10"
+        [rowspan] = "5">
+        <div>
+          <h1 class="labelsm">Gpu Hotspot Temp</h1>
+          <!-- <h1 class="value">{{gpuTemp}}</h1> -->
+          <h1 class="valuesm">{{sensors.hotSpotTempO.value | number:'1.1-1' }} {{sensors.hotSpotTempO.unit}}</h1>
+          <h3 class="minsm">
+            {{sensors.hotSpotTempO.min | number:'1.1-1' }} {{sensors.hotSpotTempO.unit}}
+          </h3>
+          <h3 class="maxsm">
+            {{sensors.hotSpotTempO.max | number:'1.1-1' }} {{sensors.hotSpotTempO.unit}}
+          </h3>
+        </div>
+        <!-- <app-meter [data]=gpuTemp [label]="'Gpu Tmp'" [max]=100></app-meter> -->
+      </mat-grid-tile>
+  
+  
+      <mat-grid-tile
+        [colspan] = "10"
+        [rowspan] = "5">
+        <div>
+          <h1 class="labelsm">Gpu Fan RPM</h1>
+          <!-- <h1 class="value">{{gpuRPM}}</h1> -->
+          <h1 class="valuesm">{{sensors.gpuRPMO.value | number:'1.1-1' }} {{sensors.gpuRPMO.unit}}</h1>
+          <h3 class="minsm">
+            {{sensors.gpuRPMO.min | number:'1.1-1' }} {{sensors.gpuRPMO.unit}}
+          </h3>
+          <h3 class="maxsm">
+            {{sensors.gpuRPMO.max | number:'1.1-1' }} {{sensors.gpuRPMO.unit}}
+          </h3>
+        </div>
+        <!-- <app-meter [data]=gpuRPM [label]="'Gpu RPM'" [max]=2500></app-meter> -->
+      </mat-grid-tile>
+  
+  
+  
+      <mat-grid-tile
+        [colspan] = "10"
+        [rowspan] = "10">
+        <div>
+          <h1 class="label">Gpu Power</h1>
+          <!-- <h1 class="value">{{gpuPower}}</h1> -->
+          <h1 class="value">{{sensors.gpuPowerO.value | number:'1.1-1' }} {{sensors.gpuPowerO.unit}}</h1>
+          <h3 class="min">
+            {{sensors.gpuPowerO.min | number:'1.1-1' }} {{sensors.gpuPowerO.unit}}
+          </h3>
+          <h3 class="max">
+            {{sensors.gpuPowerO.max | number:'1.1-1' }} {{sensors.gpuPowerO.unit}}
+          </h3>
+        </div>
+        <!-- <app-meter [data]=gpuPower [label]="'Gpu Pwr'" [max]=190></app-meter> -->
+      </mat-grid-tile>
+      <mat-grid-tile
+        [colspan] = "10"
+        [rowspan] = "10">
+        <div>
+          <h1 class="label">Gpu Load</h1>
+          <!-- <h1 class="value">{{gpuLoad}}</h1> -->
+          <h1 class="value">{{sensors.gpuLoadO.value | number:'1.1-1' }} {{sensors.gpuLoadO.unit}}</h1>
+          <h3 class="min">
+            {{sensors.gpuLoadO.min | number:'1.1-1' }} {{sensors.gpuLoadO.unit}}
+          </h3>
+          <h3 class="max">
+            {{sensors.gpuLoadO.max | number:'1.1-1' }} {{sensors.gpuLoadO.unit}}
+          </h3>
+        </div>
+        <!-- <app-meter [data]=ssdTemp [label]="'SSD Tmp'" [max]=100></app-meter> -->
+      </mat-grid-tile>
+  
+      <mat-grid-tile
+        [colspan] = "10"
+        [rowspan] = "5">
+        <div>
+          <h1 class="labelsm">Cpu Pump RPM</h1>
+          <h1 class="valuesm">{{sensors.cpuRPMO.value | number:'1.1-1' }} {{sensors.cpuRPMO.unit}}</h1>
+           <h3 class="minsm">
+            {{sensors.cpuRPMO.min | number:'1.1-1' }} {{sensors.cpuRPMO.unit}}
+          </h3>
+          <h3 class="maxsm">
+            {{sensors.cpuRPMO.max | number:'1.1-1' }} {{sensors.cpuRPMO.unit}}
+          </h3>
+        </div>
+      </mat-grid-tile>
+  
+  
+      <mat-grid-tile
+        [colspan] = "10"
+        [rowspan] = "5">
+        <div>
+          <h1 class="labelsm">sn850 Temp</h1>
+          <h1 class="valuesm">{{sensors.sn850TempO.value | number:'1.1-1' }} {{sensors.sn850TempO.unit}}</h1>
+           <h3 class="minsm">
+            {{sensors.sn850TempO.min | number:'1.1-1' }} {{sensors.sn850TempO.unit}}
+          </h3>
+          <h3 class="maxsm">
+            {{sensors.sn850TempO.max | number:'1.1-1' }} {{sensors.sn850TempO.unit}}
+          </h3>
+        </div>
+        <!-- <app-meter [data]=ssdTemp [label]="'SSD Tmp'" [max]=100></app-meter> -->
+      </mat-grid-tile>
+  
+  
+  
+  
+      <mat-grid-tile
+        [colspan] = "10"
+        [rowspan] = "10">
+        <div>
+          <h1 class="label">Water Temp</h1>
+          <!-- <h1 class="value">{{waterTemp}}</h1> -->
+          <h1 class="value">{{sensors.waterTempO.value | number:'1.1-1' }} {{sensors.waterTempO.unit}}</h1>
+          <h3 class="min">
+            {{sensors.waterTempO.min | number:'1.1-1' }} {{sensors.waterTempO.unit}}
+          </h3>
+          <h3 class="max">
+            {{sensors.waterTempO.max | number:'1.1-1' }} {{sensors.waterTempO.unit}}
+          </h3>
+        </div>
+        <!-- <app-meter [data]=ssdTemp [label]="'SSD Tmp'" [max]=100></app-meter> -->
+      </mat-grid-tile>
+      <mat-grid-tile
+        [colspan] = "10"
+        [rowspan] = "10">
+        <div class="multi">
+          <h2 class="multilabelA">Fan 1: <code class="innercolor"> {{sensors.fan1O.value}} rpm</code></h2>
+          <h2 class="multilabelB">Fan 2: <code class="innercolor"> {{sensors.fan2O.value}} rpm</code></h2>
+          <h2 class="multilabelC">Fan 3: <code class="innercolor"> {{sensors.fan3O.value}} rpm</code></h2>
+  
+          <!-- <h1 class="label">Svr Uptime</h1>
+          <h1 class="smallvalue">{{serverUptime}}</h1> -->
+        </div>
+        <!-- <app-meter [data]=ssdTemp [label]="'SSD Tmp'" [max]=100></app-meter> -->
+      </mat-grid-tile>
+  
+      <mat-grid-tile
+        [colspan] = "10"
+        [rowspan] = "5">
+        <div>
+          <h1 class="labelsm">Internet Up</h1>
+          <h1 class="valuesm">{{sensors.internetUpActivityO.value | number:'1.1-1' }} {{sensors.internetUpActivityO.unit}}</h1>
+           <h3 class="minsm">
+            {{sensors.internetUpActivityO.min | number:'1.1-1' }} {{sensors.internetUpActivityO.unit}}
+          </h3>
+          <h3 class="maxsm">
+            {{sensors.internetUpActivityO.max | number:'1.1-1' }} {{sensors.internetUpActivityO.unit}}
+          </h3>
+        </div>
+        <!-- <app-meter [data]=ssdTemp [label]="'SSD Tmp'" [max]=100></app-meter> -->
+      </mat-grid-tile>
+  
+      <!-- <mat-grid-tile
+        [colspan] = "10"
+        [rowspan] = "10">
+        <div>
+          <h1 class="label">Svr RAM</h1>
+          <h1 class="value">{{serverRam}}</h1>
+        </div>
+         <app-meter [data]=ssdTemp [label]="'SSD Tmp'" [max]=100></app-meter>
+  
+      </mat-grid-tile> -->
+  
+  
+  
+      <mat-grid-tile
+        [colspan] = "10"
+        [rowspan] = "10">
+        <div>
+          <h1 class="label">Mossfet Temp</h1>
+          <!-- <h1 class="value">{{moboMosfetTemp}}</h1> -->
+          <h1 class="value">{{sensors.moboMosfetTempO.value | number:'1.1-1' }} {{sensors.moboMosfetTempO.unit}}</h1>
+          <h3 class="min">
+            {{sensors.moboMosfetTempO.min | number:'1.1-1' }} {{sensors.moboMosfetTempO.unit}}
+          </h3>
+          <h3 class="max">
+            {{sensors.moboMosfetTempO.max | number:'1.1-1' }} {{sensors.moboMosfetTempO.unit}}
+          </h3>
+        </div>
+        <!-- <app-meter [data]=moboMosfetTemp [label]="'Mossfet'" [max]=100></app-meter> -->
+        <!--<app-graph [idata]=chartData1 [chartData]=cD1 [height]=150 [width]=220></app-graph>-->
+      </mat-grid-tile>
+      <mat-grid-tile
+        [colspan] = "10"
+        [rowspan] = "10">
+        <div class="multi">
+          <h2 class="multilabelA">SCpu: <code class="innercolor"> {{serverCpuLoad}}</code></h2>
+          <h2 class="multilabelB">SCpu Temp: <code class="innercolor"> {{serverCpuTemp}}</code></h2>
+          <h2 class="multilabelC">SCpu Ram: <code class="innercolor"> {{serverRam}}</code></h2>
+  
+          <!-- <h1 class="label">Svr Uptime</h1>
+          <h1 class="smallvalue">{{serverUptime}}</h1> -->
+        </div>
+        <!-- <app-meter [data]=ssdTemp [label]="'SSD Tmp'" [max]=100></app-meter> -->
+      </mat-grid-tile>
+  
+      <mat-grid-tile
+        [colspan] = "10"
+        [rowspan] = "5">
+        <div>
+          <h1 class="labelsm">840Evo Temp</h1>
+          <h1 class="valuesm">{{sensors.evo840TempO.value | number:'1.1-1' }} {{sensors.evo840TempO.unit}}</h1>
+           <h3 class="minsm">
+            {{sensors.evo840TempO.min | number:'1.1-1' }} {{sensors.evo840TempO.unit}}
+          </h3>
+          <h3 class="maxsm">
+            {{sensors.evo840TempO.max | number:'1.1-1' }} {{sensors.evo840TempO.unit}}
+          </h3>
+        </div>
+        <!-- <app-meter [data]=ssdTemp [label]="'SSD Tmp'" [max]=100></app-meter> -->
+      </mat-grid-tile>
+  
+      <mat-grid-tile
+        [colspan] = "10"
+        [rowspan] = "5">
+        <div>
+          <h1 class="labelsm">Internet Down</h1>
+          <h1 class="valuesm">{{sensors.internetDownActivityO.value | number:'1.1-1' }} {{sensors.internetDownActivityO.unit}}</h1>
+           <h3 class="minsm">
+            {{sensors.internetDownActivityO.min | number:'1.1-1' }} {{sensors.internetDownActivityO.unit}}
+          </h3>
+          <h3 class="maxsm">
+            {{sensors.internetDownActivityO.max | number:'1.1-1' }} {{sensors.internetDownActivityO.unit}}
+          </h3>
+        </div>
+        <!-- <app-meter [data]=ssdTemp [label]="'SSD Tmp'" [max]=100></app-meter> -->
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+  
+  
 </div>
-
 
 
 

@@ -17,8 +17,28 @@ export class AppComponent implements OnInit {
   title = 'angular-monitor';
   w = screen.width;
   setH = Math.floor(Math.floor(Math.floor(document.documentElement.clientHeight / 4) / 10) * 0.99) + 'px';
-
+  
+  switch = false;
+  skip = 0;
   test = -1;
+
+  poolHash = ''
+  poolBlocksPerHour = ''
+  poolTImeSinceLastBlock = ''
+  poolErgoPrice = ''
+
+  poolCurrentHashrate = ''
+  poolAverageHashrate = ''
+  poolValidShares = ''
+  poolActiveWorkers = ''
+  poolUnpaid = ''
+  poolUnconfirmed = ''
+  poolCoinsPerDay = ''
+  poolUSDPerDay = ''
+
+  networkDiff = ''
+  networkHash = ''
+  networkBlockTime = ''
 
   d: any;
   interval: any;
@@ -288,6 +308,7 @@ export class AppComponent implements OnInit {
     const url = 'https://data.bright-waters.com/data.json';
     const url3 = 'https://test.bright-waters.com';
     const url2 = 'https://monitor.bright-waters.com/api/server.json';
+    const url4 = 'https://data.bright-waters.com/value.json'
     console.log(screen.height);
     let firstCall = true
 
@@ -300,6 +321,32 @@ export class AppComponent implements OnInit {
         this.timeStamp = moment();
       }
 
+      this.http.get(url4).subscribe((res) => {
+        this.timeStamp = moment();
+        let test = res;
+        let data = JSON.parse(JSON.stringify(test));
+        console.log(data['value'])
+        if (this.skip > 0) {
+          console.log(this.skip)
+          this.skip = this.skip - 1;
+        }
+        if (data['value'] === true && this.skip === 0) {
+          this.switch = !this.switch
+          this.onResize()
+          this.skip = 6;
+        } 
+      });
+
+      // if (this.switch) {
+      //   this.http.get(url4).subscribe((res) => {
+      //     this.timeStamp = moment();
+      //     let test = res;
+      //     let data = JSON.parse(JSON.stringify(test));
+      //     console.log(data['value'])
+          
+      //   });
+      // }
+
       this.http.get(url2).subscribe((res) => {
         this.data2 = res;
         let data = JSON.parse(JSON.stringify(this.data2));
@@ -309,6 +356,24 @@ export class AppComponent implements OnInit {
         this.serverCpuTemp = data['cpuTemp'] + ' ℃'
         this.serverRam = data['ram'] + ' %'
         this.serverUptime = data['uptime']
+
+        this.poolHash = data['poolHashRate'].toFixed(2) + ' Gh/s'
+        this.poolBlocksPerHour = data['poolBlocksPerHour'].toFixed(2)
+        this.poolTImeSinceLastBlock = data['poolTimeSinceLastBlock'].toFixed(2) + ' min'
+        this.poolErgoPrice = '$' + data['ergoPrice'].toFixed(2)
+
+        this.poolCurrentHashrate = data['poolCurrentHashrate'].toFixed(2) + ' Mh/s'
+        this.poolAverageHashrate = data['poolAverageHashrate'].toFixed(2) + ' Mh/s'
+        this.poolValidShares = data['poolValidShares']
+        this.poolActiveWorkers = data['poolActiveWorkers']
+        this.poolUnpaid = data['poolUnpaid'].toFixed(2) + ' ERG'
+        this.poolUnconfirmed = data['poolUnconfirmed'].toFixed(2) + ' ERG'
+        this.poolCoinsPerDay = data['poolCoinsPerDay'].toFixed(2) + ' ERG'
+        this.poolUSDPerDay = '$' + data['poolUSDPerDay'].toFixed(2)
+
+        this.networkDiff = data['networkDiff'].toFixed(2) + ' p'
+        this.networkHash = data['networkHash'].toFixed(2) + ' Th/s'
+        this.networkBlockTime = data['networkBlockTime'].toFixed(2) + ' s'
       });
 
       this.http.get(url3).subscribe((res) => {
@@ -481,13 +546,19 @@ export class AppComponent implements OnInit {
         this.ref.markForCheck();
         //console.log(this.sensors);
       });
+      
+      
     }, 1000);
 
   }
 
   onResize() {
-    this.setH = Math.floor((screen.height / 4) / 10) + 'px';
+    this.setH = Math.floor(Math.floor(Math.floor(document.documentElement.clientHeight / 4) / 10) * 0.99) + 'px';
     this.w = screen.width
+  }
+
+  setSwitch() {
+    this.switch = !this.switch;
   }
 
 }

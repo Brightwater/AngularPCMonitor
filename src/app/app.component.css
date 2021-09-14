@@ -9,6 +9,12 @@ mat-grid-tile {
 
 }
 
+input[type=button]{
+  background:transparent;
+  border:0;
+  position: absolute;
+ }
+
 h1 {
   margin: 0 !important;
   position: absolute;
