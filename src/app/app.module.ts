@@ -10,6 +10,7 @@ import { MeterComponent } from './meter/meter.component';
 import { GraphComponent } from './graph/graph.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
+import { Graph2Component } from './graph2/graph2.component';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { MatSliderModule } from '@angular/material/slider';
     AppComponent,
     MeterComponent,
     GraphComponent,
+    Graph2Component,
   ],
   imports: [
     BrowserModule,

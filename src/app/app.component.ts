@@ -17,17 +17,18 @@ export class AppComponent implements OnInit {
   title = 'angular-monitor';
   w = screen.width;
   setH = Math.floor(Math.floor(Math.floor(document.documentElement.clientHeight / 4) / 10) * 0.99) + 'px';
-  
+
   switch = false;
   skip = 0;
   test = -1;
 
   poolHash = ''
-  poolBlocksPerHour = ''
+  poolBlocksPerDay = ''
   poolTImeSinceLastBlock = ''
   poolErgoPrice = ''
-
+  poolCurrentLuck = ''
   poolCurrentHashrate = ''
+  poolExpectedBlocksPerDay = ''
   poolAverageHashrate = ''
   poolValidShares = ''
   poolActiveWorkers = ''
@@ -35,10 +36,39 @@ export class AppComponent implements OnInit {
   poolUnconfirmed = ''
   poolCoinsPerDay = ''
   poolUSDPerDay = ''
-
+  actualHashrate = ''
   networkDiff = ''
   networkHash = ''
   networkBlockTime = ''
+  timestamp = 0
+
+  card1070H = ''
+  card1070T = ''
+  card1070E = ''
+  card1070P = ''
+
+  card2060H = ''
+  card2060T = ''
+  card2060E = ''
+  card2060P = ''
+
+  card3070tiH = ''
+  card3070tiT = ''
+  card3070tiE = ''
+  card3070tiP = ''
+  card3070tiMT = ''
+
+  card3060tiH = ''
+  card3060tiT = ''
+  card3060tiE = ''
+  card3060tiP = ''
+
+  card1070Store: number[] = [];
+  card2060Store: number[] = [];
+  card3060tiStore: number[] = [];
+  card3070tiStore: number[] = [];
+  cardAllStore: number[] = [];
+
 
   d: any;
   interval: any;
@@ -291,6 +321,7 @@ export class AppComponent implements OnInit {
   serverCpuLoad: any;
   serverRam: any;
   serverUptime: any;
+  refresh = 0
 
   cD1 = [
     { data: Array<any>(), label: 'Cpu Voltage', },
@@ -309,10 +340,116 @@ export class AppComponent implements OnInit {
     const url3 = 'https://test.bright-waters.com';
     const url2 = 'https://monitor.bright-waters.com/api/server.json';
     const url4 = 'https://data.bright-waters.com/value.json'
+    const url5 = 'https://monitor.bright-waters.com/api/miningData.json'
+    const urlGaming = '.bright-waters.com/summary?last-stat-ts='
     console.log(screen.height);
     let firstCall = true
 
     console.log(this.sensors);
+    this.http.get(url5).subscribe((res) => {
+      let data = JSON.parse(JSON.stringify(res));
+
+      this.poolHash = data['poolHashRate'].toFixed(2) + ' Gh/s'
+      this.poolBlocksPerDay = data['poolBlocksPerDay'].toFixed(2)
+      this.poolExpectedBlocksPerDay = data['poolExpectedBlocksPerDay'].toFixed(2)
+      this.poolTImeSinceLastBlock = data['poolTimeSinceLastBlock'].toFixed(2) + ' hrs'
+      this.poolErgoPrice = '$' + data['ergoPrice'].toFixed(2)
+      this.poolCurrentLuck = data['poolCurrentLuck'].toFixed(0) + ' %'
+      this.poolCurrentHashrate = data['poolCurrentHashrate'].toFixed(2) + ' Mh/s'
+      //this.poolAverageHashrate = data['poolAverageHashrate'].toFixed(2) + ' Mh/s'
+      //this.poolValidShares = data['poolValidShares']
+      this.poolActiveWorkers = data['poolActiveWorkers']
+      this.poolUnpaid = data['poolUnpaid'].toFixed(2) + ' ERG'
+      this.poolUnconfirmed = data['poolUnconfirmed'].toFixed(2) + ' ERG'
+      this.poolCoinsPerDay = data['poolCoinsPerDay'].toFixed(2) + ' ERG'
+      this.poolUSDPerDay = '$' + data['poolUSDPerDay'].toFixed(2)
+      this.actualHashrate = data['actualHashrate'].toFixed(2) + ' Mh/s'
+      this.networkDiff = data['networkDiff'].toFixed(2) + ' p'
+      this.networkHash = data['networkHash'].toFixed(2) + ' Th/s'
+      this.networkBlockTime = data['networkBlockTime'].toFixed(2) + ' s'
+
+      this.card1070H = data['cardData']['1070']['hashrate'].toFixed(0) + ' Mh/s'
+      this.card1070T = data['cardData']['1070']['temperature'].toFixed(0) + ' ℃'
+      this.card1070E = data['cardData']['1070']['efficiency']
+      this.card1070P = data['cardData']['1070']['power'].toFixed(0) + ' W'
+
+      this.card2060H = data['cardData']['2060']['hashrate'].toFixed(0) + ' Mh/s'
+      this.card2060T = data['cardData']['2060']['temperature'].toFixed(0) + ' ℃'
+      this.card2060E = data['cardData']['2060']['efficiency']
+      this.card2060P = data['cardData']['2060']['power'].toFixed(0) + ' W'
+
+      this.card3070tiH = data['cardData']['3070ti']['hashrate'].toFixed(0) + ' Mh/s'
+      this.card3070tiT = data['cardData']['3070ti']['temperature'].toFixed(0) + ' ℃'
+      this.card3070tiE = data['cardData']['3070ti']['efficiency']
+      this.card3070tiP = data['cardData']['3070ti']['power'].toFixed(0) + ' W'
+      this.card3070tiMT = data['cardData']['3070ti']['memTemp'].toFixed(0) + ' ℃'
+
+      this.card3060tiH = data['cardData']['3060ti']['hashrate'].toFixed(0) + ' Mh/s'
+      this.card3060tiT = data['cardData']['3060ti']['temperature'].toFixed(0) + ' ℃'
+      this.card3060tiE = data['cardData']['3060ti']['efficiency']
+      this.card3060tiP = data['cardData']['3060ti']['power'].toFixed(0) + ' W'
+
+      this.card1070Store = data['hashStore']['1070']
+      this.card2060Store = data['hashStore']['2060']
+      this.card3060tiStore = data['hashStore']['3060ti']
+      this.card3070tiStore = data['hashStore']['3070ti']
+      this.cardAllStore = data['hashStore']['all']
+      console.log(this.cardAllStore)
+      //this.timestamp = data['hoursAgo']
+    });
+    setInterval( () => {
+      this.http.get(url5).subscribe((res) => {
+        let data = JSON.parse(JSON.stringify(res));
+
+        this.poolHash = data['poolHashRate'].toFixed(2) + ' Gh/s'
+        this.poolBlocksPerDay = data['poolBlocksPerDay'].toFixed(2)
+        this.poolExpectedBlocksPerDay = data['poolExpectedBlocksPerDay'].toFixed(2)
+        this.poolTImeSinceLastBlock = data['poolTimeSinceLastBlock'].toFixed(2) + ' hrs'
+        this.poolErgoPrice = '$' + data['ergoPrice'].toFixed(2)
+        this.poolCurrentLuck = data['poolCurrentLuck'].toFixed(0) + ' %'
+        this.poolCurrentHashrate = data['poolCurrentHashrate'].toFixed(2) + ' Mh/s'
+        //this.poolAverageHashrate = data['poolAverageHashrate'].toFixed(2) + ' Mh/s'
+        //this.poolValidShares = data['poolValidShares']
+        this.poolActiveWorkers = data['poolActiveWorkers']
+        this.poolUnpaid = data['poolUnpaid'].toFixed(2) + ' ERG'
+        this.poolUnconfirmed = data['poolUnconfirmed'].toFixed(2) + ' ERG'
+        this.poolCoinsPerDay = data['poolCoinsPerDay'].toFixed(2) + ' ERG'
+        this.poolUSDPerDay = '$' + data['poolUSDPerDay'].toFixed(2)
+        this.actualHashrate = data['actualHashrate'].toFixed(2) + ' Mh/s'
+        this.networkDiff = data['networkDiff'].toFixed(2) + ' p'
+        this.networkHash = data['networkHash'].toFixed(2) + ' Th/s'
+        this.networkBlockTime = data['networkBlockTime'].toFixed(2) + ' s'
+
+        this.card1070H = data['cardData']['1070']['hashrate'].toFixed(0) + ' Mh/s'
+        this.card1070T = data['cardData']['1070']['temperature'].toFixed(0) + ' ℃'
+        this.card1070E = data['cardData']['1070']['efficiency']
+        this.card1070P = data['cardData']['1070']['power'].toFixed(0) + ' W'
+
+        this.card2060H = data['cardData']['2060']['hashrate'].toFixed(0) + ' Mh/s'
+        this.card2060T = data['cardData']['2060']['temperature'].toFixed(0) + ' ℃'
+        this.card2060E = data['cardData']['2060']['efficiency']
+        this.card2060P = data['cardData']['2060']['power'].toFixed(0) + ' W'
+
+        this.card3070tiH = data['cardData']['3070ti']['hashrate'].toFixed(0) + ' Mh/s'
+        this.card3070tiT = data['cardData']['3070ti']['temperature'].toFixed(0) + ' ℃'
+        this.card3070tiE = data['cardData']['3070ti']['efficiency']
+        this.card3070tiP = data['cardData']['3070ti']['power'].toFixed(0) + ' W'
+        this.card3070tiMT = data['cardData']['3070ti']['memTemp'].toFixed(0) + ' ℃'
+
+        this.card3060tiH = data['cardData']['3060ti']['hashrate'].toFixed(0) + ' Mh/s'
+        this.card3060tiT = data['cardData']['3060ti']['temperature'].toFixed(0) + ' ℃'
+        this.card3060tiE = data['cardData']['3060ti']['efficiency']
+        this.card3060tiP = data['cardData']['3060ti']['power'].toFixed(0) + ' W'
+
+        this.card1070Store = data['hashStore']['1070']
+        this.card2060Store = data['hashStore']['2060']
+        this.card3060tiStore = data['hashStore']['3060ti']
+        this.card3070tiStore = data['hashStore']['3070ti']
+        this.cardAllStore = data['hashStore']['all']
+        //this.timestamp = data['hoursAgo']
+      });
+    }, 60000);
+
     setInterval( () => {
       let timeNow: moment.Moment = moment();
       if (timeNow.diff(this.timeStamp, 'minutes') >= 1) {
@@ -332,20 +469,13 @@ export class AppComponent implements OnInit {
         }
         if (data['value'] === true && this.skip === 0) {
           this.switch = !this.switch
+          if (this.switch === true) {
+            this.refresh = 10;
+          }
           this.onResize()
           this.skip = 6;
-        } 
+        }
       });
-
-      // if (this.switch) {
-      //   this.http.get(url4).subscribe((res) => {
-      //     this.timeStamp = moment();
-      //     let test = res;
-      //     let data = JSON.parse(JSON.stringify(test));
-      //     console.log(data['value'])
-          
-      //   });
-      // }
 
       this.http.get(url2).subscribe((res) => {
         this.data2 = res;
@@ -357,24 +487,27 @@ export class AppComponent implements OnInit {
         this.serverRam = data['ram'] + ' %'
         this.serverUptime = data['uptime']
 
-        this.poolHash = data['poolHashRate'].toFixed(2) + ' Gh/s'
-        this.poolBlocksPerHour = data['poolBlocksPerHour'].toFixed(2)
-        this.poolTImeSinceLastBlock = data['poolTimeSinceLastBlock'].toFixed(2) + ' min'
-        this.poolErgoPrice = '$' + data['ergoPrice'].toFixed(2)
 
-        this.poolCurrentHashrate = data['poolCurrentHashrate'].toFixed(2) + ' Mh/s'
-        this.poolAverageHashrate = data['poolAverageHashrate'].toFixed(2) + ' Mh/s'
-        this.poolValidShares = data['poolValidShares']
-        this.poolActiveWorkers = data['poolActiveWorkers']
-        this.poolUnpaid = data['poolUnpaid'].toFixed(2) + ' ERG'
-        this.poolUnconfirmed = data['poolUnconfirmed'].toFixed(2) + ' ERG'
-        this.poolCoinsPerDay = data['poolCoinsPerDay'].toFixed(2) + ' ERG'
-        this.poolUSDPerDay = '$' + data['poolUSDPerDay'].toFixed(2)
-
-        this.networkDiff = data['networkDiff'].toFixed(2) + ' p'
-        this.networkHash = data['networkHash'].toFixed(2) + ' Th/s'
-        this.networkBlockTime = data['networkBlockTime'].toFixed(2) + ' s'
       });
+
+      // if (this.switch) {
+      //   if (this.refresh >= 10) {
+      //     let s = "https://" //3070ti
+      //     let a = ["3070ti", "3060ti", "2060", "1070"]
+      //     for (let c of a) {
+      //       let newUrl = s + c + urlGaming + (this.timestamp)
+      //       console.log(newUrl)
+      //     }
+
+
+      //     this.http.get(url4).subscribe((res) => {
+      //       let test = res;
+      //       let data = JSON.parse(JSON.stringify(test));
+      //       // console.log(data['value'])
+      //     });
+      //   }
+      //   this.refresh = this.refresh + 1;
+      // }
 
       this.http.get(url3).subscribe((res) => {
         this.data = res;
@@ -546,8 +679,8 @@ export class AppComponent implements OnInit {
         this.ref.markForCheck();
         //console.log(this.sensors);
       });
-      
-      
+
+
     }, 1000);
 
   }

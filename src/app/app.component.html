@@ -4,27 +4,29 @@
       <mat-grid-tile
         id="1"
         [colspan] = "10"
-        [rowspan] = "10">
-        <div class="infoContainer">
-          <h1 class="label">Flypool Blocks/hr: </h1>
-          <h1 class="valuesm">{{poolBlocksPerHour}}</h1>
+        [rowspan] = "5">
+        <div>
+          <h1 class="labelsm">Actual Blocks/Day: </h1>
+          <h1 class="valuesm">{{poolBlocksPerDay}}</h1>
         </div>
       </mat-grid-tile>
+
       <mat-grid-tile
         id="1"
         [colspan] = "10"
-        [rowspan] = "10">
-        <div class="infoContainer">
-          <h1 class="label">Flypool Since Blk: </h1>
-          <h1 class="valuesm">{{poolTImeSinceLastBlock}}</h1>
+        [rowspan] = "5">
+        <div>
+          <h1 class="labelsm">Current Luck: </h1>
+          <h1 class="valuesm">{{poolCurrentLuck}}</h1>
         </div>
       </mat-grid-tile>
+
       <mat-grid-tile
         id="1"
         [colspan] = "10"
-        [rowspan] = "10">
+        [rowspan] = "5">
         <div class="infoContainer">
-          <h1 class="label">Flypool Hashrate: </h1>
+          <h1 class="labelsm">Pool Hashrate: </h1>
           <h1 class="valuesm">{{poolHash}}</h1>
         </div>
       </mat-grid-tile>
@@ -37,42 +39,102 @@
           <h1 class="valuesm">{{poolErgoPrice}}</h1>
         </div>
       </mat-grid-tile>
+
       <mat-grid-tile
         id="1"
         [colspan] = "10"
-        [rowspan] = "10">
+        [rowspan] = "5">
         <div class="infoContainer">
-          <h1 class="label">Curr Hash: </h1>
+          <h1 class="labelsm">My Pool Hash: </h1>
           <h1 class="valuesm">{{poolCurrentHashrate}}</h1>
         </div>
       </mat-grid-tile>
+
       <mat-grid-tile
         id="1"
         [colspan] = "10"
         [rowspan] = "10">
         <div class="infoContainer">
-          <h1 class="label">Avg Hash: </h1>
-          <h1 class="valuesm">{{poolAverageHashrate}}</h1>
+          <h1 class="label">Network Diff: </h1>
+          <h1 class="valuesm">{{networkDiff}}</h1>
+        </div>
+      </mat-grid-tile>
+
+
+      <mat-grid-tile
+        id="1"
+        [colspan] = "10"
+        [rowspan] = "5">
+        <div>
+          <h1 class="labelsm">Expected Blocks/Day: </h1>
+          <h1 class="valuesm">{{poolExpectedBlocksPerDay}}</h1>
         </div>
       </mat-grid-tile>
       <mat-grid-tile
         id="1"
         [colspan] = "10"
-        [rowspan] = "10">
-        <div class="infoContainer">
-          <h1 class="label">Shares: </h1>
-          <h1 class="valuesm">{{poolValidShares}}</h1>
+        [rowspan] = "5">
+        <div>
+          <h1 class="labelsm">Time Since Blk: </h1>
+          <h1 class="valuesm">{{poolTImeSinceLastBlock}}</h1>
         </div>
       </mat-grid-tile>
+
       <mat-grid-tile
         id="1"
         [colspan] = "10"
-        [rowspan] = "10">
+        [rowspan] = "5">
         <div class="infoContainer">
-          <h1 class="label">Active GPUs: </h1>
+          <h1 class="labelsm">Network Hash: </h1>
+          <h1 class="valuesm">{{networkHash}}</h1>
+        </div>
+      </mat-grid-tile>
+
+      <mat-grid-tile
+        id="1"
+        [colspan] = "10"
+        [rowspan] = "5">
+        <div class="infoContainer">
+          <h1 class="labelsm">Active GPUs: </h1>
           <h1 class="valuesm">{{poolActiveWorkers}}</h1>
         </div>
       </mat-grid-tile>
+
+      <mat-grid-tile
+        id="1"
+        [colspan] = "10"
+        [rowspan] = "5">
+        <div class="infoContainer">
+          <h1 class="labelsm">EST. USD/Day: </h1>
+          <h1 class="valuesm">{{poolUSDPerDay}}</h1>
+        </div>
+      </mat-grid-tile>
+
+
+
+
+
+      <mat-grid-tile
+        id="1"
+        [colspan] = "10"
+        [rowspan] = "10">
+        <div class="infoContainer">
+          <h1 class="label">Blocktime: </h1>
+          <h1 class="valuesm">{{networkBlockTime}}</h1>
+        </div>
+      </mat-grid-tile>
+
+      <mat-grid-tile
+        id="1"
+        [colspan] = "10"
+        [rowspan] = "10">
+        <div class="infoContainer">
+          <h1 class="label">Unpaid Bal: </h1>
+          <h1 class="valuesm">{{poolUnpaid}}</h1>
+        </div>
+      </mat-grid-tile>
+
+
       <mat-grid-tile
         id="1"
         [colspan] = "10"
@@ -87,55 +149,82 @@
         [colspan] = "10"
         [rowspan] = "10">
         <div class="infoContainer">
-          <h1 class="label">Unpaid Bal: </h1>
-          <h1 class="valuesm">{{poolUnpaid}}</h1>
+          <h1 class="label">Actual Hashrate: </h1>
+          <h1 class="valuesm">{{actualHashrate}}</h1>
         </div>
       </mat-grid-tile>
-      
       <mat-grid-tile
         id="1"
         [colspan] = "10"
         [rowspan] = "10">
         <div class="infoContainer">
-          <h1 class="label">Coins/Day: </h1>
+          <h1 class="label">Earnings: </h1>
+          <h1 class="valuesm">Todo</h1>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile
+        id="1"
+        [colspan] = "10"
+        [rowspan] = "5">
+        <div class="infoContainer">
+          <h1 class="labelsm">Coins/Day: </h1>
           <h1 class="valuesm">{{poolCoinsPerDay}}</h1>
         </div>
       </mat-grid-tile>
       <mat-grid-tile
         id="1"
+        [colspan] = "40"
+        [rowspan] = "20">
+        <app-graph2 [idata0]=card1070Store [idata1]=card2060Store [idata2]=card3070tiStore [idata3]=card3060tiStore [idata4]=cardAllStore></app-graph2>
+      </mat-grid-tile>
+
+      <mat-grid-tile
         [colspan] = "10"
         [rowspan] = "10">
-        <div class="infoContainer">
-          <h1 class="label">EST. USD/Day: </h1>
-          <h1 class="valuesm">{{poolUSDPerDay}}</h1>
+        <div class="multi">
+          <h2 class="multilabelMain">Gtx 1070</h2>
+          <h2 class="multilabelB"> Hashrate: <code class="innercolor"> {{card1070H}}</code></h2>
+          <h2 class="multilabelB"> Temp: <code class="innercolor"> {{card1070T}}</code></h2>
+          <h2 class="multilabelB"> Efficiency: <code class="innercolor"> {{card1070E}}</code></h2>
+          <h2 class="multilabelD"> Power: <code class="innercolor"> {{card1070P}}</code></h2>
         </div>
+        <!-- <app-meter [data]=ssdTemp [label]="'SSD Tmp'" [max]=100></app-meter> -->
       </mat-grid-tile>
       <mat-grid-tile
-        id="1"
         [colspan] = "10"
         [rowspan] = "10">
-        <div class="infoContainer">
-          <h1 class="label">Network Diff: </h1>
-          <h1 class="valuesm">{{networkDiff}}</h1>
+        <div class="multi">
+          <h2 class="multilabelMain">Gtx 3070 ti</h2>
+          <h2 class="multilabelB"> Hashrate: <code class="innercolor"> {{card3070tiH}}</code></h2>
+          <h2 class="multilabelB"> Temps: <code class="innercolor"> {{card3070tiT}} / {{card3070tiMT}}</code></h2>
+          <h2 class="multilabelB"> Efficiency: <code class="innercolor"> {{card3070tiE}}</code></h2>
+          <h2 class="multilabelD"> Power: <code class="innercolor"> {{card3070tiP}}</code></h2>
         </div>
+        <!-- <app-meter [data]=ssdTemp [label]="'SSD Tmp'" [max]=100></app-meter> -->
       </mat-grid-tile>
       <mat-grid-tile
-        id="1"
         [colspan] = "10"
         [rowspan] = "10">
-        <div class="infoContainer">
-          <h1 class="label">Network Hash: </h1>
-          <h1 class="valuesm">{{networkHash}}</h1>
+        <div class="multi">
+          <h2 class="multilabelMain">Gtx 3060 ti</h2>
+          <h2 class="multilabelB"> Hashrate: <code class="innercolor"> {{card3060tiH}}</code></h2>
+          <h2 class="multilabelB"> Temp: <code class="innercolor"> {{card3060tiT}}</code></h2>
+          <h2 class="multilabelB"> Efficiency: <code class="innercolor"> {{card3060tiE}}</code></h2>
+          <h2 class="multilabelD"> Power: <code class="innercolor"> {{card3060tiP}}</code></h2>
         </div>
+        <!-- <app-meter [data]=ssdTemp [label]="'SSD Tmp'" [max]=100></app-meter> -->
       </mat-grid-tile>
       <mat-grid-tile
-        id="1"
         [colspan] = "10"
         [rowspan] = "10">
-        <div class="infoContainer">
-          <h1 class="label">Blocktime: </h1>
-          <h1 class="valuesm">{{networkBlockTime}}</h1>
+        <div class="multi">
+          <h2 class="multilabelMain">Gtx 2060</h2>
+          <h2 class="multilabelB"> Hashrate: <code class="innercolor"> {{card2060H}}</code></h2>
+          <h2 class="multilabelB"> Temp: <code class="innercolor"> {{card2060T}}</code></h2>
+          <h2 class="multilabelB"> Efficiency: <code class="innercolor"> {{card2060E}}</code></h2>
+          <h2 class="multilabelD"> Power: <code class="innercolor"> {{card2060P}}</code></h2>
         </div>
+        <!-- <app-meter [data]=ssdTemp [label]="'SSD Tmp'" [max]=100></app-meter> -->
       </mat-grid-tile>
     </mat-grid-list>
   </div>
@@ -155,10 +244,10 @@
             {{sensors.cpuLoadO.max | number:'1.1-1' }} {{sensors.cpuLoadO.unit}}
           </h3>
         </div>
-  
+
         <!--<app-meter [data]=cpuLoad [label]="'Cpu'" [max]=100></app-meter>-->
       </mat-grid-tile>
-  
+
       <mat-grid-tile
         [colspan] = "10"
         [rowspan] = "5">
@@ -175,7 +264,7 @@
         </div>
         <!-- <app-meter [data]=cpuTemp [label]="'Cpu Tmp'" [max]=100></app-meter> -->
       </mat-grid-tile>
-  
+
       <mat-grid-tile
         [colspan] = "10"
         [rowspan] = "5">
@@ -192,7 +281,7 @@
         </div>
         <!-- <app-meter [data]=cpuRPM [label]="'Cpu Fan'" [max]=3000></app-meter> -->
       </mat-grid-tile>
-  
+
       <mat-grid-tile
         [colspan] = "10"
         [rowspan] = "10">
@@ -225,8 +314,8 @@
         </div>
         <!-- <app-meter [data]=cpuVoltage [label]="'Cpu Pwr'" [max]=1.6></app-meter> -->
       </mat-grid-tile>
-  
-  
+
+
       <mat-grid-tile
         [colspan] = "10"
         [rowspan] = "5">
@@ -243,7 +332,7 @@
         </div>
         <!-- <app-meter [data]=ramUsage [label]="'RAM'" [max]=100></app-meter> -->
       </mat-grid-tile>
-  
+
       <mat-grid-tile
         [colspan] = "10"
         [rowspan] = "5">
@@ -260,9 +349,9 @@
         </div>
         <!-- <app-meter [data]=cpuTemp [label]="'Cpu Tmp'" [max]=100></app-meter> -->
       </mat-grid-tile>
-  
-  
-  
+
+
+
       <mat-grid-tile
         [colspan] = "10"
         [rowspan] = "5">
@@ -279,7 +368,7 @@
         </div>
         <!-- <app-meter [data]=cpuRPM [label]="'Cpu Fan'" [max]=3000></app-meter> -->
       </mat-grid-tile>
-  
+
       <mat-grid-tile
         [colspan] = "10"
         [rowspan] = "5">
@@ -295,15 +384,15 @@
         </div>
         <!-- <app-meter [data]=ramUsage [label]="'RAM'" [max]=100></app-meter> -->
       </mat-grid-tile>
-  
+
       <mat-grid-tile
         [colspan] = "30"
         [rowspan] = "20">
         <app-graph [idata]=chartData></app-graph>
       </mat-grid-tile>
-  
-  
-  
+
+
+
       <mat-grid-tile
         [colspan] = "10"
         [rowspan] = "10">
@@ -320,9 +409,9 @@
         </div>
         <!-- <app-meter [data]=ramUsage [label]="'RAM'" [max]=100></app-meter> -->
       </mat-grid-tile>
-  
-  
-  
+
+
+
       <mat-grid-tile
         [colspan] = "10"
         [rowspan] = "5">
@@ -339,8 +428,8 @@
         </div>
         <!-- <app-meter [data]=gpuVRAM [label]="'VRAM'" [max]=100></app-meter> -->
       </mat-grid-tile>
-  
-  
+
+
       <mat-grid-tile
         [colspan] = "10"
         [rowspan] = "5">
@@ -357,7 +446,7 @@
         </div>
         <!-- <app-meter [data]=gpuTemp [label]="'Gpu Tmp'" [max]=100></app-meter> -->
       </mat-grid-tile>
-  
+
       <mat-grid-tile
         [colspan] = "10"
         [rowspan] = "5">
@@ -373,10 +462,10 @@
         </div>
         <!-- <app-meter [data]=ramUsage [label]="'RAM'" [max]=100></app-meter> -->
       </mat-grid-tile>
-  
-  
-  
-  
+
+
+
+
       <mat-grid-tile
         [colspan] = "10"
         [rowspan] = "5">
@@ -393,8 +482,8 @@
         </div>
         <!-- <app-meter [data]=gpuTemp [label]="'Gpu Tmp'" [max]=100></app-meter> -->
       </mat-grid-tile>
-  
-  
+
+
       <mat-grid-tile
         [colspan] = "10"
         [rowspan] = "5">
@@ -411,9 +500,9 @@
         </div>
         <!-- <app-meter [data]=gpuRPM [label]="'Gpu RPM'" [max]=2500></app-meter> -->
       </mat-grid-tile>
-  
-  
-  
+
+
+
       <mat-grid-tile
         [colspan] = "10"
         [rowspan] = "10">
@@ -446,7 +535,7 @@
         </div>
         <!-- <app-meter [data]=ssdTemp [label]="'SSD Tmp'" [max]=100></app-meter> -->
       </mat-grid-tile>
-  
+
       <mat-grid-tile
         [colspan] = "10"
         [rowspan] = "5">
@@ -461,8 +550,8 @@
           </h3>
         </div>
       </mat-grid-tile>
-  
-  
+
+
       <mat-grid-tile
         [colspan] = "10"
         [rowspan] = "5">
@@ -478,10 +567,10 @@
         </div>
         <!-- <app-meter [data]=ssdTemp [label]="'SSD Tmp'" [max]=100></app-meter> -->
       </mat-grid-tile>
-  
-  
-  
-  
+
+
+
+
       <mat-grid-tile
         [colspan] = "10"
         [rowspan] = "10">
@@ -505,13 +594,13 @@
           <h2 class="multilabelA">Fan 1: <code class="innercolor"> {{sensors.fan1O.value}} rpm</code></h2>
           <h2 class="multilabelB">Fan 2: <code class="innercolor"> {{sensors.fan2O.value}} rpm</code></h2>
           <h2 class="multilabelC">Fan 3: <code class="innercolor"> {{sensors.fan3O.value}} rpm</code></h2>
-  
+
           <!-- <h1 class="label">Svr Uptime</h1>
           <h1 class="smallvalue">{{serverUptime}}</h1> -->
         </div>
         <!-- <app-meter [data]=ssdTemp [label]="'SSD Tmp'" [max]=100></app-meter> -->
       </mat-grid-tile>
-  
+
       <mat-grid-tile
         [colspan] = "10"
         [rowspan] = "5">
@@ -527,7 +616,7 @@
         </div>
         <!-- <app-meter [data]=ssdTemp [label]="'SSD Tmp'" [max]=100></app-meter> -->
       </mat-grid-tile>
-  
+
       <!-- <mat-grid-tile
         [colspan] = "10"
         [rowspan] = "10">
@@ -536,11 +625,11 @@
           <h1 class="value">{{serverRam}}</h1>
         </div>
          <app-meter [data]=ssdTemp [label]="'SSD Tmp'" [max]=100></app-meter>
-  
+
       </mat-grid-tile> -->
-  
-  
-  
+
+
+
       <mat-grid-tile
         [colspan] = "10"
         [rowspan] = "10">
@@ -565,13 +654,13 @@
           <h2 class="multilabelA">SCpu: <code class="innercolor"> {{serverCpuLoad}}</code></h2>
           <h2 class="multilabelB">SCpu Temp: <code class="innercolor"> {{serverCpuTemp}}</code></h2>
           <h2 class="multilabelC">SCpu Ram: <code class="innercolor"> {{serverRam}}</code></h2>
-  
+
           <!-- <h1 class="label">Svr Uptime</h1>
           <h1 class="smallvalue">{{serverUptime}}</h1> -->
         </div>
         <!-- <app-meter [data]=ssdTemp [label]="'SSD Tmp'" [max]=100></app-meter> -->
       </mat-grid-tile>
-  
+
       <mat-grid-tile
         [colspan] = "10"
         [rowspan] = "5">
@@ -587,7 +676,7 @@
         </div>
         <!-- <app-meter [data]=ssdTemp [label]="'SSD Tmp'" [max]=100></app-meter> -->
       </mat-grid-tile>
-  
+
       <mat-grid-tile
         [colspan] = "10"
         [rowspan] = "5">
@@ -605,8 +694,8 @@
       </mat-grid-tile>
     </mat-grid-list>
   </div>
-  
-  
+
+
 </div>
 
 

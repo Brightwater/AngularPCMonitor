@@ -54,29 +54,42 @@ div {
   text-align: center;
 }
 
+.multilabelMain {
+  color: white;
+  margin: 0 !important;
+  padding: 0 !important;
+  padding-top: 3% !important;
+  padding-bottom: 3% !important;
+  position: relative !important;
+  font-size: 1.3vw;
+  margin-left: 2% !important;
+  width: 100%;
+  height: 14% !important;
+}
+
 .multilabelA {
   color: white;
   margin: 0 !important;
   padding: 0 !important;
-  padding-top: 5% !important;
-  padding-bottom: 7% !important;
+  padding-top: 25% !important;
+  padding-bottom: 3% !important;
   position: relative !important;
-  font-size: 1.5vw;
+  font-size: 1vw;
   margin-left: 2% !important;
   width: 100%;
-  height: 20% !important;
+  height: 12% !important;
 }
 
 .multilabelB {
   color: white;
   margin: 0 !important;
   padding: 0 !important;
-  padding-bottom: 7% !important;
+  padding-bottom: 3% !important;
   position: relative !important;
-  font-size: 1.5vw;
+  font-size: 1vw;
   margin-left: 2% !important;
   width: 100%;
-  height: 20% !important;
+  height: 12% !important;
 }
 
 .multilabelC {
@@ -84,10 +97,20 @@ div {
   margin: 0 !important;
   padding: 0 !important;
   position: relative !important;
-  font-size: 1.5vw;
+  font-size: 1vw;
   margin-left: 2% !important;
   width: 100%;
-  height: 20% !important;
+  height: 5% !important;
+}
+.multilabelD {
+  color: white;
+  margin: 0 !important;
+  padding: 0 !important;
+  position: relative !important;
+  font-size: 1vw;
+  margin-left: 2% !important;
+  width: 100%;
+  height: 12% !important;
 }
 
 .value {
