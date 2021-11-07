@@ -63,6 +63,9 @@ export class Graph2Component implements OnInit {
   constructor(private elRef: ElementRef) { }
 
   ngOnInit(): void {
+    setInterval( () => {
+      this.fixSize();
+    }, 1000);
   }
 
   // tslint:disable-next-line: use-lifecycle-interface
@@ -85,6 +88,7 @@ export class Graph2Component implements OnInit {
 
     if (this.rendered){
       this.chart.chart.update();
+      this.fixSize();
     }
     if (this.elRef.nativeElement.parentElement.parentElement.clientWidth !== 0 && this.rendered === false) {
       this.rendered = true;
